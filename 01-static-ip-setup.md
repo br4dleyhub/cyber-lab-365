@@ -2,285 +2,285 @@
 
 # 
 
-#### &nbsp;Environment
+## &nbsp;Environment
 
-#### \- Host: VMware Workstation
+## \- Host: VMware Workstation
 
-#### \- Kali Linux — 192.168.187.50
+## \- Kali Linux — 192.168.187.50
 
-#### \- Windows 11 — 192.168.187.60
+## \- Windows 11 — 192.168.187.60
 
-#### \- Ubuntu — 192.168.187.70
+## \- Ubuntu — 192.168.187.70
 
-#### \- NAT network (gateway 192.168.187.2)
+## \- NAT network (gateway 192.168.187.2)
 
-#### 
+## 
 
-#### Objective
+## Objective
 
-#### Today, we set up our Cyber Lab 365 environment by installing VMs and configuring static IP addresses. This ensures consistent networking for testing and cybersecurity exercises.
+## Today, we set up our Cyber Lab 365 environment by installing VMs and configuring static IP addresses. This ensures consistent networking for testing and cybersecurity exercises.
 
-#### 
+## 
 
-#### 
+## 
 
-#### Table of Contents
+## Table of Contents
 
-#### 1\. VM Installation
+## 1\. VM Installation
 
-#### 2\. Ping Tests
+## 2\. Ping Tests
 
-#### 3\. Static IP Configuration
+## 3\. Static IP Configuration
 
-#### &nbsp;  - Windows VM
+## &nbsp;  - Windows VM
 
-#### &nbsp;  - Kali Linux VM
+## &nbsp;  - Kali Linux VM
 
-#### &nbsp;  - Ubuntu VM
+## &nbsp;  - Ubuntu VM
 
-#### 4\. IP Address Table
+## 4\. IP Address Table
 
-#### 5\. Screenshots
+## 5\. Screenshots
 
-#### 6\. Commands Used
+## 6\. Commands Used
 
-#### 7\. Notes
+## 7\. Notes
 
-#### 
+## 
 
-#### 
+## 
 
-#### VM Installation
+## VM Installation
 
-#### \- Virtualization Software: VMware Workstation
+## \- Virtualization Software: VMware Workstation
 
-#### \- VMs Installed: Windows 11, Kali Linux, Ubuntu 22.04
+## \- VMs Installed: Windows 11, Kali Linux, Ubuntu 22.04
 
-#### \- VM Settings:
+## \- VM Settings:
 
-#### &nbsp; - Windows 11: 4 GB RAM, 2 CPUs, 60 GB storage
+## &nbsp; - Windows 11: 4 GB RAM, 2 CPUs, 60 GB storage
 
-#### &nbsp; - Kali Linux: 2 GB RAM, 2 CPUs, 20 GB storage
+## &nbsp; - Kali Linux: 2 GB RAM, 2 CPUs, 20 GB storage
 
-#### &nbsp; - Ubuntu 22.04: 2 GB RAM, 2 CPUs, 20 GB storage
+## &nbsp; - Ubuntu 22.04: 2 GB RAM, 2 CPUs, 20 GB storage
 
-#### \- Network Adapter: Initially NAT → changed to Bridged for static IPs
+## \- Network Adapter: Initially NAT → changed to Bridged for static IPs
 
-#### \- Notes: Internet connectivity tested via NAT before switching to static IP
+## \- Notes: Internet connectivity tested via NAT before switching to static IP
 
-#### 
+## 
 
-#### 
+## 
 
-#### Ping Tests
+## Ping Tests
 
-#### 
+## 
 
-#### Windows:
+## Windows:
 
-#### ping 8.8.8.8
+## ping 8.8.8.8
 
-#### ping google.com
+## ping google.com
 
-#### 
+## 
 
-#### Linux (Kali / Ubuntu):
+## Linux (Kali / Ubuntu):
 
-#### ping -c 4 8.8.8.8
+## ping -c 4 8.8.8.8
 
-#### ping -c 4 google.com
+## ping -c 4 google.com
 
-#### 
+## 
 
-#### Ping successful confirms network connectivity.
+## Ping successful confirms network connectivity.
 
-#### 
+## 
 
-#### 
+## 
 
-#### Static IP Configuration
+## Static IP Configuration
 
-#### 
+## 
 
-#### Windows VM
+## Windows VM
 
-#### 1\. Open Control Panel → Network and Internet → Network Connections
+## 1\. Open Control Panel → Network and Internet → Network Connections
 
-#### 2\. Right-click your adapter → Properties → Internet Protocol Version 4 (TCP/IPv4) → Properties
+## 2\. Right-click your adapter → Properties → Internet Protocol Version 4 (TCP/IPv4) → Properties
 
-#### 3\. Select Use the following IP address:
+## 3\. Select Use the following IP address:
 
-#### &nbsp;  - IP Address: 192.168.187.60
+## &nbsp;  - IP Address: 192.168.187.60
 
-#### &nbsp;  - Subnet Mask: 255.255.255.0
+## &nbsp;  - Subnet Mask: 255.255.255.0
 
-#### &nbsp;  - Default Gateway: 192.168.187.2
+## &nbsp;  - Default Gateway: 192.168.187.2
 
-#### &nbsp;  - DNS Servers: 8.8.8.8, 8.8.4.4
+## &nbsp;  - DNS Servers: 8.8.8.8, 8.8.4.4
 
-#### 4\. Save settings and test:
+## 4\. Save settings and test:
 
-#### ipconfig
+## ipconfig
 
-#### ping 192.168.187.2
+## ping 192.168.187.2
 
-#### ping 8.8.8.8
+## ping 8.8.8.8
 
-#### 
+## 
 
-#### Kali Linux VM
+## Kali Linux VM
 
-#### 1\. Edit the network interfaces file:
+## 1\. Edit the network interfaces file:
 
-#### sudo nano /etc/network/interfaces
+## sudo nano /etc/network/interfaces
 
-#### 2\. Add:
+## 2\. Add:
 
-#### auto eth0
+## auto eth0
 
-#### iface eth0 inet static
+## iface eth0 inet static
 
-#### address 192.168.187.50
+## address 192.168.187.50
 
-#### netmask 255.255.255.0
+## netmask 255.255.255.0
 
-#### gateway 192.168.187.2
+## gateway 192.168.187.2
 
-#### dns-nameservers 8.8.8.8 8.8.4.4
+## dns-nameservers 8.8.8.8 8.8.4.4
 
-#### 3\. Restart networking:
+## 3\. Restart networking:
 
-#### sudo systemctl restart networking
+## sudo systemctl restart networking
 
-#### 4\. Test connectivity:
+## 4\. Test connectivity:
 
-#### ifconfig eth0
+## ifconfig eth0
 
-#### ping 192.168.187.2
+## ping 192.168.187.2
 
-#### ping 8.8.8.8
+## ping 8.8.8.8
 
-#### 
+## 
 
-#### Ubuntu VM
+## Ubuntu VM
 
-#### 1\. Open Netplan configuration:
+## 1\. Open Netplan configuration:
 
-#### sudo nano /etc/netplan/00-installer-config.yaml
+## sudo nano /etc/netplan/00-installer-config.yaml
 
-#### 2\. Update with:
+## 2\. Update with:
 
-#### network:
+## network:
 
-#### &nbsp; version: 2
+## &nbsp; version: 2
 
-#### &nbsp; ethernets:
+## &nbsp; ethernets:
 
-#### &nbsp;   ens33:
+## &nbsp;   ens33:
 
-#### &nbsp;     dhcp4: no
+## &nbsp;     dhcp4: no
 
-#### &nbsp;     addresses: \[192.168.187.70/24]
+## &nbsp;     addresses: \[192.168.187.70/24]
 
-#### &nbsp;     gateway4: 192.168.187.2
+## &nbsp;     gateway4: 192.168.187.2
 
-#### &nbsp;     nameservers:
+## &nbsp;     nameservers:
 
-#### &nbsp;         addresses: \[8.8.8.8,8.8.4.4]
+## &nbsp;         addresses: \[8.8.8.8,8.8.4.4]
 
-#### 3\. Apply config:
+## 3\. Apply config:
 
-#### sudo netplan apply
+## sudo netplan apply
 
-#### 4\. Test:
+## 4\. Test:
 
-#### ip a
+## ip a
 
-#### ping 192.168.187.2
+## ping 192.168.187.2
 
-#### ping google.com
+## ping google.com
 
-#### 
+## 
 
-#### 
+## 
 
-#### IP Address Table
+## IP Address Table
 
-#### 
+## 
 
-#### VM        | IP Address       | Subnet Mask      | Gateway         | DNS Servers
+## VM        | IP Address       | Subnet Mask      | Gateway         | DNS Servers
 
-#### Windows 11| 192.168.187.60  | 255.255.255.0    | 192.168.187.2  | 8.8.8.8, 8.8.4.4
+## Windows 11| 192.168.187.60  | 255.255.255.0    | 192.168.187.2  | 8.8.8.8, 8.8.4.4
 
-#### Kali      | 192.168.187.50  | 255.255.255.0    | 192.168.187.2  | 8.8.8.8, 8.8.4.4
+## Kali      | 192.168.187.50  | 255.255.255.0    | 192.168.187.2  | 8.8.8.8, 8.8.4.4
 
-#### Ubuntu    | 192.168.187.70  | 255.255.255.0    | 192.168.187.2  | 8.8.8.8, 8.8.4.4
+## Ubuntu    | 192.168.187.70  | 255.255.255.0    | 192.168.187.2  | 8.8.8.8, 8.8.4.4
 
-#### 
+## 
 
-#### 
+## 
 
-#### Screenshots
+## Screenshots
 
-#### Add screenshots in a /screenshots folder and link here:
+## Add screenshots in a /screenshots folder and link here:
 
-#### \- Windows IP config: screenshots/windows-ip.png
+## \- Windows IP config: screenshots/windows-ip.png
 
-#### \- Kali config: screenshots/kali-ip.png
+## \- Kali config: screenshots/kali-ip.png
 
-#### \- Ubuntu Netplan: screenshots/ubuntu-ip.png
+## \- Ubuntu Netplan: screenshots/ubuntu-ip.png
 
-#### \- Ping tests: screenshots/ping-test.png
+## \- Ping tests: screenshots/ping-test.png
 
-#### 
+## 
 
-#### 
+## 
 
-#### Commands Used
+## Commands Used
 
-#### 
+## 
 
-#### Windows:
+## Windows:
 
-#### ipconfig
+## ipconfig
 
-#### ping <IP>
+## ping <IP>
 
-#### 
+## 
 
-#### Linux:
+## Linux:
 
-#### ifconfig
+## ifconfig
 
-#### ip a
+## ip a
 
-#### ping -c 4 <IP>
+## ping -c 4 <IP>
 
-#### sudo nano /etc/network/interfaces
+## sudo nano /etc/network/interfaces
 
-#### sudo nano /etc/netplan/00-installer-config.yaml
+## sudo nano /etc/netplan/00-installer-config.yaml
 
-#### sudo netplan apply
+## sudo netplan apply
 
-#### sudo systemctl restart networking
+## sudo systemctl restart networking
 
-#### 
+## 
 
-#### 
+## 
 
-#### Notes
+## Notes
 
-#### \- Backup network config files before making changes
+## \- Backup network config files before making changes
 
-#### \- Use a consistent IP scheme to avoid conflicts
+## \- Use a consistent IP scheme to avoid conflicts
 
-#### \- Document screenshots for future reference
+## \- Document screenshots for future reference
 
-#### \- Observe differences between Linux distributions when configuring static IPs
+## \- Observe differences between Linux distributions when configuring static IPs
 
-#### 
+## 
 
-#### End of Day 1
+## End of Day 1
 
-#### 
+## 
 

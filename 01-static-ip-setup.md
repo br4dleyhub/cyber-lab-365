@@ -4,7 +4,7 @@
 
 ## 
 
-## \## Objective
+## Objective
 
 ## Today, we set up our Cyber Lab 365 environment by installing VMs and configuring static IP addresses. This ensures consistent networking for testing and cybersecurity exercises.
 
@@ -14,27 +14,27 @@
 
 ## 
 
-## \## Table of Contents
+## Table of Contents
 
-## 1\. \[VM Installation](#vm-installation)
+## 1\. VM Installation
 
-## 2\. \[Ping Tests](#ping-tests)
+## 2\. Ping Tests
 
-## 3\. \[Static IP Configuration](#static-ip-configuration)
+## 3\. Static IP Configuration
 
-## &nbsp;  - \[Windows VM](#windows-vm)
+## &nbsp;  - Windows VM
 
-## &nbsp;  - \[Kali Linux VM](#kali-linux-vm)
+## &nbsp;  - Kali Linux VM
 
-## &nbsp;  - \[Ubuntu VM](#ubuntu-vm)
+## &nbsp;  - Ubuntu VM
 
-## 4\. \[IP Address Table](#ip-address-table)
+## 4\. IP Address Table
 
-## 5\. \[Screenshots](#screenshots)
+## 5\. Screenshots
 
-## 6\. \[Commands Used](#commands-used)
+## 6\. Commands Used
 
-## 7\. \[Notes](#notes)
+## 7\. Notes
 
 ## 
 
@@ -42,13 +42,13 @@
 
 ## 
 
-## \## VM Installation
+## VM Installation
 
-## \- \*\*Virtualization Software:\*\* VMware Workstation / VirtualBox
+## \- Virtualization Software: VMware Workstation / VirtualBox
 
-## \- \*\*VMs Installed:\*\* Windows 10, Kali Linux, Ubuntu 22.04
+## \- VMs Installed: Windows 10, Kali Linux, Ubuntu 22.04
 
-## \- \*\*VM Settings:\*\*
+## \- VM Settings:
 
 ## &nbsp; - Windows 10: 4 GB RAM, 2 CPUs, 60 GB storage
 
@@ -56,9 +56,9 @@
 
 ## &nbsp; - Ubuntu 22.04: 2 GB RAM, 2 CPUs, 20 GB storage
 
-## \- \*\*Network Adapter:\*\* Initially NAT → changed to Bridged for static IPs
+## \- Network Adapter: Initially NAT → changed to Bridged for static IPs
 
-## \- \*\*Notes:\*\* Internet connectivity tested via NAT before switching to static IP
+## \- Notes: Internet connectivity tested via NAT before switching to static IP
 
 ## 
 
@@ -66,69 +66,55 @@
 
 ## 
 
-## \## Ping Tests
+## Ping Tests
 
-## \### Windows
+## 
 
-## ```cmd
+## Windows:
 
 ## ping 8.8.8.8
 
 ## ping google.com
 
-## Linux (Kali / Ubuntu)
+## 
 
-## bash
-
-## Copier le code
+## Linux (Kali / Ubuntu):
 
 ## ping -c 4 8.8.8.8
 
 ## ping -c 4 google.com
 
-## ✅ Ping successful confirms network connectivity.
+## 
+
+## Ping successful confirms network connectivity.
+
+## 
+
+## ---
 
 ## 
 
 ## Static IP Configuration
 
+## 
+
 ## Windows VM
 
-## Open Control Panel → Network and Internet → Network Connections.
+## 1\. Open Control Panel → Network and Internet → Network Connections
 
-## 
+## 2\. Right-click your adapter → Properties → Internet Protocol Version 4 (TCP/IPv4) → Properties
 
-## Right-click your adapter → Properties → Internet Protocol Version 4 (TCP/IPv4) → Properties.
+## 3\. Select Use the following IP address:
 
-## 
+## &nbsp;  - IP Address: 192.168.1.100
 
-## Select Use the following IP address:
+## &nbsp;  - Subnet Mask: 255.255.255.0
 
-## 
+## &nbsp;  - Default Gateway: 192.168.1.1
 
-## IP Address: 192.168.1.100
+## &nbsp;  - DNS Servers: 8.8.8.8, 8.8.4.4
 
-## 
-
-## Subnet Mask: 255.255.255.0
-
-## 
-
-## Default Gateway: 192.168.1.1
-
-## 
-
-## DNS Servers: 8.8.8.8, 8.8.4.4
-
-## 
-
-## Save settings and test:
-
-## 
-
-## cmd
-
-## Copier le code
+## 4\. Save settings and test:
 
 ## ipconfig
 
@@ -136,25 +122,15 @@
 
 ## ping 8.8.8.8
 
-## Kali Linux VM
-
-## Edit the network interfaces file:
-
 ## 
 
-## bash
+## Kali Linux VM
 
-## Copier le code
+## 1\. Edit the network interfaces file:
 
 ## sudo nano /etc/network/interfaces
 
-## Add:
-
-## 
-
-## text
-
-## Copier le code
+## 2\. Add:
 
 ## auto eth0
 
@@ -168,23 +144,11 @@
 
 ## dns-nameservers 8.8.8.8 8.8.4.4
 
-## Restart networking:
-
-## 
-
-## bash
-
-## Copier le code
+## 3\. Restart networking:
 
 ## sudo systemctl restart networking
 
-## Test connectivity:
-
-## 
-
-## bash
-
-## Copier le code
+## 4\. Test connectivity:
 
 ## ifconfig eth0
 
@@ -192,25 +156,15 @@
 
 ## ping 8.8.8.8
 
-## Ubuntu VM
-
-## Open Netplan configuration:
-
 ## 
 
-## bash
+## Ubuntu VM
 
-## Copier le code
+## 1\. Open Netplan configuration:
 
 ## sudo nano /etc/netplan/00-installer-config.yaml
 
-## Update with:
-
-## 
-
-## yaml
-
-## Copier le code
+## 2\. Update with:
 
 ## network:
 
@@ -230,23 +184,11 @@
 
 ## &nbsp;         addresses: \[8.8.8.8,8.8.4.4]
 
-## Apply config:
-
-## 
-
-## bash
-
-## Copier le code
+## 3\. Apply config:
 
 ## sudo netplan apply
 
-## Test:
-
-## 
-
-## bash
-
-## Copier le code
+## 4\. Test:
 
 ## ip a
 
@@ -254,15 +196,27 @@
 
 ## ping google.com
 
+## 
+
+## ---
+
+## 
+
 ## IP Address Table
 
-## VM	IP Address	Subnet Mask	Gateway	DNS Servers
+## 
 
-## Windows	192.168.1.100	255.255.255.0	192.168.1.1	8.8.8.8, 8.8.4.4
+## VM        | IP Address     | Subnet Mask      | Gateway       | DNS Servers
 
-## Kali	192.168.1.101	255.255.255.0	192.168.1.1	8.8.8.8, 8.8.4.4
+## Windows   | 192.168.1.100 | 255.255.255.0  | 192.168.1.1   | 8.8.8.8, 8.8.4.4
 
-## Ubuntu	192.168.1.102	255.255.255.0	192.168.1.1	8.8.8.8, 8.8.4.4
+## Kali      | 192.168.1.101 | 255.255.255.0  | 192.168.1.1   | 8.8.8.8, 8.8.4.4
+
+## Ubuntu    | 192.168.1.102 | 255.255.255.0  | 192.168.1.1   | 8.8.8.8, 8.8.4.4
+
+## 
+
+## ---
 
 ## 
 
@@ -270,37 +224,33 @@
 
 ## Add screenshots in a /screenshots folder and link here:
 
-## 
+## \- Windows IP config: screenshots/windows-ip.png
 
-## Windows IP config: screenshots/windows-ip.png
+## \- Kali config: screenshots/kali-ip.png
 
-## 
+## \- Ubuntu Netplan: screenshots/ubuntu-ip.png
 
-## Kali config: screenshots/kali-ip.png
-
-## 
-
-## Ubuntu Netplan: screenshots/ubuntu-ip.png
+## \- Ping tests: screenshots/ping-test.png
 
 ## 
 
-## Ping tests: screenshots/ping-test.png
+## ---
 
 ## 
 
 ## Commands Used
 
+## 
 
-
-## Windows - cmd
+## Windows:
 
 ## ipconfig
 
 ## ping <IP>
 
+## 
 
-
-## Linux - bash
+## Linux:
 
 ## ifconfig
 
@@ -316,27 +266,27 @@
 
 ## sudo systemctl restart networking
 
+## 
 
+## ---
 
-
+## 
 
 ## Notes
 
-## Backup network config files before making changes.
+## \- Backup network config files before making changes
+
+## \- Use a consistent IP scheme to avoid conflicts
+
+## \- Document screenshots for future reference
+
+## \- Observe differences between Linux distributions when configuring static IPs
 
 ## 
 
-## Use a consistent IP scheme to avoid conflicts.
+## End of Day 1
 
-## 
 
-## Document screenshots for future reference.
-
-## 
-
-## Observe differences between Linux distributions when configuring static IPs.
-
-## 
 
 
 

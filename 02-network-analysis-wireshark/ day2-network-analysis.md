@@ -79,15 +79,11 @@ On **Kali**, run:
 
 
 
-Screenshots:
+## Screenshots:
 
-## [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
+# [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
 
-
-
-icmp-wireshark.png
-
-
+# [Wireshark icmp kali to Ubuntu](./screenshots/wireshark-ping-ubuntu.png)
 
 
 

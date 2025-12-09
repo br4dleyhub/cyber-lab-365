@@ -79,7 +79,7 @@ On **Kali**, run:
 
 
 
-## Screenshots:
+###### Screenshots:
 
 # [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
 # [Wireshark icmp kali to Ubuntu](./screenshots/wireshark-ping-ubuntu.png)
@@ -140,22 +140,11 @@ On Kali, run:  curl http://testphp.vulnweb.com
 
 
 
-Screenshots :
+###### Screenshots :
 
-
-
-http-get.png
-
-
-
-http-200.png
-
-
-
-http-tcp-stream.png
-
-
-
+# [HTTP Traffic Capture](./screenshots/http-traffic-capture.png)
+Description:
+This screenshot shows the HTTP request/response packets captured during web browsing using Wireshark. It highlights key fields such as source IP, destination IP, protocol, and packet details.
 
 
 

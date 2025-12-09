@@ -254,7 +254,8 @@
 
 ## [Ubuntu Ping Internet](./screenshots/ubuntu-ping-internet.png)
 
-
+##
+##
 ## Commands Used
 
 ## 

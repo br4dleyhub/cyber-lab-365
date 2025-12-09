@@ -280,7 +280,7 @@
 
 ## 
 
-## End of Day 1
+## End of Day One
 
 ## 
 

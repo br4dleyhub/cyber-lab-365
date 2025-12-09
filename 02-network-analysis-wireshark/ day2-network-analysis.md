@@ -82,10 +82,7 @@ On **Kali**, run:
 ## Screenshots:
 
 # [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
-
 # [Wireshark icmp kali to Ubuntu](./screenshots/wireshark-ping-ubuntu.png)
-
-
 
 
 
@@ -113,16 +110,8 @@ On Kali, run: traceroute google.com
 
 ###### Screenshots :
 
-
-
-traceroute-terminal.png
-
-
-
-dns-wireshark.png
-
-
-
+# [Traceroute Analysis (ICMP Mode)](./screenshots/traceroute-icmp.png)
+# [Traceroute Analysis (DNS Mode)](./screenshots/traceroute-dns.png)
 
 
 

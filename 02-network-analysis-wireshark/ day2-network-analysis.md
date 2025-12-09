@@ -81,9 +81,7 @@ On **Kali**, run:
 
 Screenshots:
 
-
-
-icmp-kali-to-windows.png
+## [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
 
 
 

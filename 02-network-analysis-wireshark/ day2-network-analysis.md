@@ -80,16 +80,17 @@ On **Kali**, run:
 
 
 ###### Screenshots:
-
-# [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
 ###### Description:
 This image shows ping traffic generated from the Windows VM, captured in Wireshark.
 Allows comparison with Ubuntu traffic and verification of network behavior across OSes.
+# [Wireshark icmp kali to Windows](./screenshots/wireshark-ping-windows.png)
 
-# [Wireshark icmp kali to Ubuntu](./screenshots/wireshark-ping-ubuntu.png)
 ###### Description:
 This screenshot shows ICMP echo requests and replies when pinging from the Ubuntu machine.
 Used to verify connectivity and analyze ICMP patterns.
+# [Wireshark icmp kali to Ubuntu](./screenshots/wireshark-ping-ubuntu.png)
+
+
 
 
 #### PART 2 — DNS + ROUTING ANALYSIS (TRACEROUTE)
@@ -115,16 +116,15 @@ On Kali, run: traceroute google.com
 
 
 ###### Screenshots :
-
-# [Traceroute Analysis (ICMP Mode)](./screenshots/traceroute-icmp.png)
 ###### Description:
 This image displays the hop-by-hop route to the destination using ICMP echo requests.
 Used to analyze latency, routing path, and potential packet loss.
+# [Traceroute Analysis (ICMP Mode)](./screenshots/traceroute-icmp.png)
 
-# [Traceroute Analysis (DNS / UDP Mode Mode)](./screenshots/traceroute-dns.png)
 ###### Description:
 This screenshot captures the traceroute results using DNS/UDP mode with port 53.
 Useful to compare path differences between ICMP and DNS traceroute methods.
+# [Traceroute Analysis (DNS / UDP Mode Mode)](./screenshots/traceroute-dns.png)
 
 
 
@@ -153,10 +153,10 @@ On Kali, run:  curl http://testphp.vulnweb.com
 
 
 ###### Screenshots :
-
-# [HTTP Traffic Capture](./screenshots/http-traffic-capture.png)
-Description:
+###### Description:
 This screenshot shows the HTTP request/response packets captured during web browsing using Wireshark. It highlights key fields such as source IP, destination IP, protocol, and packet details.
+# [HTTP Traffic Capture](./screenshots/http-traffic-capture.png)
+
 
 
 

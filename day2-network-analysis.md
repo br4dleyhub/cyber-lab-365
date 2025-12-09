@@ -2,7 +2,7 @@
 
 
 
-**OBJECTIVE**
+#### **OBJECTIVE**
 
 
 
@@ -68,17 +68,14 @@ On **Kali**, run:
 
 
 
-You should capture:
+#### You should capture:
 
 
 
-ICMP Echo Request
-
-ICMP Echo Reply
-
-TTL values
-
-Round trip times
+* *ICMP Echo Request*
+* *ICMP Echo Reply*
+* *TTL values*
+* *Round trip times*
 
 
 
@@ -102,31 +99,25 @@ icmp-wireshark.png
 
 
 
-Wireshark filter:
-
-dns || icmp
+Wireshark filter: dns || icmp
 
 
 
-On Kali, run:
-
-traceroute google.com
+On Kali, run: traceroute google.com
 
 
 
-Expected capture:
+###### Expected capture:
 
 
 
-DNS request for google.com
-
-DNS response with IP
-
-ICMP "Time Exceeded" packets (multiple hops)
+* *DNS request for google.com*
+* *DNS response with IP*
+* *ICMP "Time Exceeded" packets (multiple hops)*
 
 
 
-Screenshots :
+###### Screenshots :
 
 
 
@@ -146,31 +137,23 @@ dns-wireshark.png
 
 #### 
 
-Wireshark filter:
-
-http
+Wireshark filter: http
 
 
 
-On Kali, run:
-
-curl http://testphp.vulnweb.com
+On Kali, run:  curl http://testphp.vulnweb.com
 
 
 
-Expected capture:
+###### Expected capture:
 
 
 
-TCP 3-way handshake (SYN, SYN/ACK, ACK)
-
-HTTP GET request
-
-HTTP/1.1 200 OK response
-
-HTML content
-
-Server headers (Apache, PHP version)
+* *TCP 3-way handshake (SYN, SYN/ACK, ACK)*
+* *HTTP GET request*
+* *HTTP/1.1 200 OK response*
+* *HTML content*
+* *Server headers (Apache, PHP version)*
 
 
 

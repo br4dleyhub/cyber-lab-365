@@ -91,7 +91,8 @@ Used to verify connectivity and analyze ICMP patterns.
 # [Wireshark icmp kali to Ubuntu](./screenshots/wireshark-ping-ubuntu.png)
 
 
-
+##
+##
 
 #### PART 2 — DNS + ROUTING ANALYSIS (TRACEROUTE)
 
@@ -126,7 +127,8 @@ This screenshot captures the traceroute results using DNS/UDP mode with port 53.
 Useful to compare path differences between ICMP and DNS traceroute methods.
 # [Traceroute Analysis (DNS / UDP Mode Mode)](./screenshots/traceroute-dns.png)
 
-
+##
+##
 
 #### PART 3 — HTTP TRAFFIC ANALYSIS (CURL)
 
@@ -158,7 +160,8 @@ This screenshot shows the HTTP request/response packets captured during web brow
 # [HTTP Traffic Capture](./screenshots/http-traffic-capture.png)
 
 
-
+##
+##
 
 
 #### KEY FINDINGS

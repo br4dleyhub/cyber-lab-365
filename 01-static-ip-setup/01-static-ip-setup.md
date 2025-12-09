@@ -222,20 +222,40 @@
 
 ## Screenshots
 
-## Add screenshots in a /screenshots folder and link here:
+## WINDOWS 11
 
-## \- Windows IP config: screenshots/windows-ip.png
+## [Windows Adapter](./screenshots/windows-adapter.png)
 
-## \- Kali config: screenshots/kali-ip.png
+## [Windows IP](./screenshots/windows-ip.png)
 
-## \- Ubuntu Netplan: screenshots/ubuntu-ip.png
+## [Windows Ping Gateway](./screenshots/windows-ping-gateway.png)
 
-## \- Ping tests: screenshots/ping-test.png
+## [Windows Ping Internet](./screenshots/windows-ping-internet.png)
 
-## 
 
-## 
+## KALI
 
+## [Kali Interfaces](./screenshots/kali-interfaces.png)
+
+## [Kali IP](./screenshots/kali-ip.png)
+
+## [Kali Ping Gateway](./screenshots/kali-ping-gateway.png)
+
+## [Kali Ping Internet](./screenshots/kali-ping-internet.png)
+
+
+## UBUNTU
+
+## [Ubuntu Netplan](./screenshots/ubuntu-netplan.png)
+
+## [Ubuntu IP](./screenshots/ubuntu-ip.png)
+
+## [Ubuntu Ping Gateway](./screenshots/ubuntu-ping-gateway.png)
+
+## [Ubuntu Ping Internet](./screenshots/ubuntu-ping-internet.png)
+
+##
+##
 ## Commands Used
 
 ## 

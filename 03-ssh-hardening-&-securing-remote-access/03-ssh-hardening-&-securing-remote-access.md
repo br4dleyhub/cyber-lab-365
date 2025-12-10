@@ -1,258 +1,159 @@
-DAY 4 — LINUX HARDENING (Ubuntu Server)
-VM: Ubuntu Server — IP 192.168.187.70
-1. Creating 3 Users with Different Privilege Levels
-Commands Executed
-sudo adduser user_basic
-sudo adduser user_advanced
-sudo adduser user_admin
+# DAY 4 — SSH HARDENING & SECURING REMOTE ACCESS
 
-sudo usermod -aG sudo user_advanced
-sudo usermod -aG sudo user_admin
+## INSTALLING OPENSSH SERVER
 
-What I Learned
+### Commands executed:
+* sudo apt update
+* sudo apt install openssh-server
+* sudo systemctl status ssh
 
-How Linux handles users and privilege levels.
+### What I learned:
+* SSH is the secure protocol used for remote administration.
+* The sshd daemon handles authentication + remote connections.
+* Checking the service status ensures SSH is running correctly.
 
-Difference between a standard user and a sudo user.
+### Screenshots:
+[ssh-service-running](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-service-running.png)
 
-Why least privilege is important in cybersecurity.
 
-How companies separate user roles to reduce risk.
 
-How attackers exploit weak configurations during privilege escalation.
+# CHANGING THE DEFAULT SSH PORT (22 → 2222)
 
-What Happens Technically
+### Configuration edited:
+* sudo nano /etc/ssh/sshd_config
 
-adduser creates the user + home directory.
+### Changed:
+* #Port 22  
+to  
+* Port 2222
 
-usermod -aG sudo assigns sudo privileges.
+### Restarted SSH:
+* sudo systemctl restart ssh
 
-user_basic = no administrative privileges.
+### Verification:
+* sudo systemctl status ssh
+* ss -tulpn | grep ssh
 
-user_advanced + user_admin = elevated privileges.
+### What I learned:
+* Port 22 is constantly scanned by bots and brute-forcers.
+* Changing the port reduces automated attacks and noise.
+* SSH daemon rebinds to the new port after restart.
 
-Screenshots
+### What happens technically:
+* SSH stops listening on port 22.
+* It now listens only on port 2222.
+* Attackers scanning the default port see nothing.
 
-/etc/passwd tail output
-groups user_advanced
-groups user_admin
+### Screenshots:
+[ssh-port-change-config](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-port-config.png)  
+[ssh-port-change-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-port-status.png)
 
-Summary
 
-Created 3 users with different privilege levels to demonstrate the principle of least privilege and how Linux separates normal users from administrators.
 
-2. Creating a Cron Job That Runs Every 2 Minutes
-Cron Entry
+# DISABLING ROOT LOGIN OVER SSH
 
-In crontab -e, added:
+### Edited file:
+* sudo nano /etc/ssh/sshd_config
 
-*/2 * * * * echo "Cron working" >> /home/brad/cron-test.txt
+### Changed:
+* PermitRootLogin prohibit-password  
+to  
+* PermitRootLogin no
 
-What I Learned
+### Restart:
+* sudo systemctl restart ssh
 
-How Linux automation works.
+### Verification:
+* sshd -T | grep rootlogin  
+Expected output: `permitrootlogin no`
 
-Cron scheduling syntax.
+### What I learned:
+* Root login is a top attack target.
+* Blocking it removes direct privileged access.
+* Admins should always log in with a normal user + sudo.
 
-Why automation is essential in real systems.
+### What happens technically:
+* SSH instantly rejects all root login attempts.
+* Attackers must compromise a normal user first.
+* Privilege escalation becomes much harder.
 
-How attackers abuse cron for persistence.
+### Screenshots:
+[permitrootlogin-before](/03-ssh-hardening-&-securing-remote-access/screenshots/permitrootlogin-yes.png)  
+[permitrootlogin-after](/03-ssh-hardening-&-securing-remote-access/screenshots/permitrootlogin-no.png)
 
-What Happens Technically
 
-Cron daemon executes the command every 2 minutes.
 
-Appends “Cron working” to the file.
+# TESTING SSH CONNECTIONS FROM KALI
 
-If the file doesn’t exist, cron creates it.
+### Successful connection:
+* ssh -p 2222 user_advanced@192.168.187.70  
+(Worked because I used the correct port.)
 
-Screenshots
+### Failed connection:
+* ssh root@192.168.187.70  
+(Failed because root login is disabled AND it defaults to port 22, which is closed.)
 
-Cron entry in crontab -e
+### What this confirms:
+* Port 2222 is active and working.
+* Root login is fully blocked.
+* Port 22 is no longer accepting connections.
 
-Growing cron-test.txt after a few minutes
+### Screenshots:
+[ssh-test-success](/03-ssh-hardening-&-securing-remote-access/screenshots/sshconnectionkali-ubuntu-success.png)  
+[ssh-test-failed](/03-ssh-hardening-&-securing-remote-access/screenshots/sshconnectionkali-ubuntu-failed.png)
 
-Summary
 
-Configured a cron job that verifies automation works. Cron is widely used for both legitimate admin tasks and malicious persistence.
 
-3. Changing the Default SSH Port
-Edited File
-sudo nano /etc/ssh/sshd_config
+# INSTALLING & CONFIGURING UFW FIREWALL
 
-Changed
+### Commands:
+* sudo apt install ufw -y
+* sudo ufw allow 2222/tcp
+* sudo ufw enable
+* sudo ufw status
 
-From:
+### What I learned:
+* UFW manages inbound traffic easily.
+* Only allowed ports remain reachable.
+* Firewalls reduce exposed attack surfaces.
 
-#Port 22
+### What happens technically:
+* UFW blocks ALL incoming traffic except allowed ports.
+* SSH is allowed ONLY on 2222.
+* Everything else becomes protected.
 
+### Screenshots:
+[ufw-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ufw-status.png)
 
-To:
 
-Port 2222
 
-Restart SSH
-sudo systemctl restart ssh
+# PERSONAL TESTS — SSH CONNECTIONS FROM MY KALI MACHINE
 
-Verification
-ss -tulpn | grep 2222
+### 1. Successful SSH login (correct port)
+* ssh -p 2222 user_advanced@192.168.187.70  
 
-What I Learned
+### 2. Failed SSH login (root + wrong port)
+* ssh root@192.168.187.70  
+→ Denied because:
+  - Root login = disabled  
+  - Port 22 = closed  
 
-How SSH configuration works.
+### What I learned from the test:
+* Always specify the port after changing SSH default settings.
+* Root login should NEVER be used for security reasons.
+* Attackers scanning port 22 now detect nothing.
 
-Why port 22 is targeted by automated scans.
 
-How changing ports reduces brute-force attempts.
 
-How blue teams modify and harden services.
+# DAY 4 SUMMARY
 
-What Happens Technically
+### Today, I successfully applied key SSH hardening techniques:
+* Installed and configured the OpenSSH server.
+* Changed SSH port from 22 → 2222.
+* Disabled root login for stronger security.
+* Tested SSH access from Kali.
+* Verified firewall, port behavior, and SSH configuration.
+* Learned how attackers scan port 22 and why teams hide SSH behind custom ports.
 
-Ubuntu stops listening on port 22.
-
-SSH daemon binds to port 2222.
-
-Attackers scanning port 22 no longer detect SSH.
-
-Screenshots
-
-sshd_config showing Port 2222
-
-ss -tulpn | grep ssh showing SSH on 2222
-
-Summary
-
-SSH now runs on port 2222, reducing automated attacks.
-
-4. SSH Connection Test from Kali Linux
-Successful connection:
-ssh -p 2222 user_advanced@192.168.187.70
-
-
-✔️ Worked — correct username and correct port.
-
-Failed connection:
-ssh root@192.168.187.70
-
-
-❌ Failed because:
-
-root login is disabled
-
-default port 22 is closed
-
-This Confirms:
-
-SSH on port 2222 is working.
-
-Root login is fully blocked.
-
-Port 22 is no longer open.
-
-Screenshots
-
-Success: ssh -p 2222 ...
-
-Fail: ssh root@...
-
-5. Disabling Root Login over SSH
-Edited File
-sudo nano /etc/ssh/sshd_config
-
-Changed
-
-From:
-
-PermitRootLogin prohibit-password
-
-
-To:
-
-PermitRootLogin no
-
-Restart
-sudo systemctl restart ssh
-
-Verification
-sshd -T | grep rootlogin
-
-
-Expected:
-
-permitrootlogin no
-
-What I Learned
-
-Root login is dangerous because attackers always target "root".
-
-Disabling it reduces brute-force risk.
-
-Forces attackers to compromise a normal account first.
-
-Administrators should always use a normal user + sudo.
-
-Technical Effects
-
-SSH rejects all root login attempts.
-
-Privilege escalation becomes harder.
-
-Screenshots
-
-PermitRootLogin no
-
-Restart command
-
-Verification output
-
-6. Installing and Configuring UFW Firewall
-Commands
-sudo apt install ufw -y
-sudo ufw allow 2222/tcp
-sudo ufw enable
-sudo ufw status
-
-What I Learned
-
-How firewalls control inbound traffic.
-
-Why organizations restrict open ports.
-
-How attackers scan for vulnerabilities.
-
-What Happens Technically
-
-UFW blocks all ports except allowed ones.
-
-Only SSH on port 2222 is accessible.
-
-Every other port is protected.
-
-Screenshots
-
-ufw status showing port 2222 allowed
-
-Summary
-
-Firewall configured to allow only port 2222, reducing attack surface.
-
-DAY 4 SUMMARY
-
-Today I completed core Linux hardening operations:
-
-Created users with different privilege levels.
-
-Configured a cron job to run every 2 minutes.
-
-Changed SSH default port to 2222.
-
-Disabled root login.
-
-Installed and configured UFW firewall.
-
-Successfully tested SSH connections (success + denied).
-
-Verified security configurations using system commands.
-
-These techniques are essential for securing real Linux servers and understanding how attackers attempt to bypass weak configurations.
+### Overall:
+**These changes significantly reduce brute-force attempts and protect privileged access.**

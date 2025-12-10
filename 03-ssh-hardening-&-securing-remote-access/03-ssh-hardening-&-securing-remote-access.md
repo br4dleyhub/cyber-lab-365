@@ -188,7 +188,7 @@ This forces attackers to compromise a user account instead of directly attacking
 * Every other port becomes protected.
 
 ## SCREENSHOTS:
-[ufw-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ufw status.png)
+[ufw-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ufwstatus.png)
 
 Enabled the UFW firewall and allowed only port 2222 for SSH.  
 This significantly reduces the system's attack surface.

@@ -278,12 +278,20 @@ ss -tulpn | grep ssh showing SSH on port 2222
 
 ###### 
 
+<<<<<<< HEAD:03-ssh-hardening-&-securing-remote-access.md
 ##### *Disabled root login over SSH.*
+=======
+[ssh_config on port 22](/screenshots/ssh-port-22.png)
+>>>>>>> e10bb142ad112a3935f7424e8c242a60b690728e:03-ssh-hardening-&-securing-remote-access/03-ssh-hardening-&-securing-remote-access.md
 
 ##### *This forces attackers to compromise a user account instead of directly attacking root, improving security.*
 
 ## 
 
+<<<<<<< HEAD:03-ssh-hardening-&-securing-remote-access.md
+=======
+[ssh_config on port 2222](/screenshots/ssh-change-port-2222.png)
+>>>>>>> e10bb142ad112a3935f7424e8c242a60b690728e:03-ssh-hardening-&-securing-remote-access/03-ssh-hardening-&-securing-remote-access.md
 
 
 #### **INSTALLING AND CONFIGURING UFW FIREWALL**
@@ -354,5 +362,116 @@ ss -tulpn | grep ssh showing SSH on port 2222
 
 #### 
 
+<<<<<<< HEAD:03-ssh-hardening-&-securing-remote-access.md
 #### *These techniques are essential for securing real Linux servers and understanding how attackers attempt to bypass weak configurations.*
+=======
+
+###### What I learned:
+
+
+
+* *SSH refuses authentication attempts for the root user.*
+* *Only normal users can log in and they must escalate with "sudo".*
+* *"sshd -T" shows the effective live configuration, not just the file.*
+
+
+
+###### Screenshots :
+
+
+
+[ssh_config rootLogin-yes](/screenshots/permitrootlogin-yes.png)
+
+
+
+[ssh_config rootLogin-no](/screenshots/permitrootlogin-no.png)
+
+
+
+
+
+
+TESTING THE NEW CONFIGURATION
+
+
+
+Tests performed:
+
+
+
+Verified the new SSH port is active:
+
+***sudo systemctl status ssh***
+
+
+
+Verified port ***2222*** is **listening**.
+
+
+
+Attempted SSH connection using the new port from Kali machine:
+
+**ssh -p 2222 username@IP**
+
+
+
+Attempted to log in directly as root (should fail):
+
+**ssh root@IP**
+
+
+
+###### Observations:
+
+
+
+1. ***SSH now rejects root logins.***
+
+2. ***Only the new port accepts connections.***
+
+3. ***Attackers scanning port 22 will no longer detect the service immediately.***
+
+
+
+
+
+
+
+###### Screenshots :
+
+
+
+[ssh-port-test-success](/screenshots/sshconnectionkali-ubuntu-success.png)
+
+
+
+[ssh-port-test-failed](/screenshots/sshconnectionkali-ubuntu-failed.png)
+
+
+
+
+
+
+###### **DAY 4 SUMMARY**
+
+
+
+***Today, I successfully applied foundational SSH security measures:***
+
+
+
+1. ***Installed and enabled the OpenSSH server.***
+
+2. ***Changed the default SSH port from 22 to 2222.***
+
+3. ***Disabled root login to block direct privileged access attempts.***
+
+4. ***Verified service behavior using network and configuration commands.***
+
+5. ***Learned how attackers enumerate port 22 and how blue teams reduce exposure.***
+
+
+
+***This hardening significantly improves the security posture of the machine by reducing brute-force attempts and removing direct access to the root account.***
+>>>>>>> e10bb142ad112a3935f7424e8c242a60b690728e:03-ssh-hardening-&-securing-remote-access/03-ssh-hardening-&-securing-remote-access.md
 

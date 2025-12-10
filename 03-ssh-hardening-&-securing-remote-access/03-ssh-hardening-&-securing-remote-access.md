@@ -47,6 +47,7 @@ This demonstrates the principle of least privilege and shows how Linux separates
 * crontab -e
 
 ## At the bottom of the file, added:
+[crontab file](/03-ssh-hardening-&-securing-remote-access/screenshots/crontab-file.png)
 */2 * * * * echo "Cron working" >> /home/user_basic/cron-test.txt
 
 ## WHAT I LEARNED:

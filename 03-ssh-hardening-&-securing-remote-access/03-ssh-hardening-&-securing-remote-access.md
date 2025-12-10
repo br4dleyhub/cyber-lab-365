@@ -28,9 +28,9 @@
 * user_advanced and user_admin = elevated privileges.
 
 ## SCREENSHOTS:
-[passwd-tail](/03-ssh-hardening-&-securing-remote-access/screenshots/passwd-tail.png)  
-[groups-user-advanced](/03-ssh-hardening-&-securing-remote-access/screenshots/groups-user-advanced.png)  
-[groups-user-admin](/03-ssh-hardening-&-securing-remote-access/screenshots/groups-user-admin.png)
+[passwd-tail](/03-ssh-hardening-&-securing-remote-access/screenshots/cat-etc-passwd-tail.png)  
+[groups-user-advanced](/03-ssh-hardening-&-securing-remote-access/screenshots/grp-user-advanced.png)  
+[groups-user-admin](/03-ssh-hardening-&-securing-remote-access/screenshots/grp-user-admin.png)
 
 Created three different privilege-level users:
 * user_basic: no administrative privileges
@@ -62,8 +62,8 @@ This demonstrates the principle of least privilege and shows how Linux separates
 * This confirms the automation is functioning correctly.
 
 ## SCREENSHOTS:
-[crontab-entry](/03-ssh-hardening-&-securing-remote-access/screenshots/crontab-entry.png)  
-[cron-test-file](/03-ssh-hardening-&-securing-remote-access/screenshots/cron-test-file.png)
+[crontab-entry-2mns-before](/03-ssh-hardening-&-securing-remote-access/screenshots/growing-cron-test-txt-2mns-later.png)  
+[cron-test-file-4mns-later](/03-ssh-hardening-&-securing-remote-access/screenshots/growing-cron-test-txt-4mns-later.png)
 
 Configured a cron job to run every 2 minutes.  
 It writes text to a file to verify that automation is active.  
@@ -99,8 +99,8 @@ To:
 * Automated bots scanning port 22 no longer find the service.
 
 ## SCREENSHOTS:
-[sshd-config-port2222](/03-ssh-hardening-&-securing-remote-access/screenshots/sshd-config-port2222.png)  
-[ssh-port-listening](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-port-listening.png)
+[sshd-config-port22](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-port-22.png)  
+[ssh-config-port2222](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-change-port-2222.png)
 
 Changed the SSH service port from 22 to 2222.  
 Restarted SSH and confirmed the new port is active.  
@@ -110,12 +110,12 @@ This reduces automated attack attempts and forces attackers to first discover th
 
 # SSH CONNECTION TEST FROM KALI MACHINE
 
-## Successful connection:
-ssh -p 2222 user_advanced@192.168.187.70  
+## Successful connection: 
+ssh -p 2222 user_advanced@192.168.187.70
 (Worked because the correct port was specified.)
 
 ## Failed connection:
-ssh root@192.168.187.70  
+ssh root@192.168.187.70
 (Denied because root login is disabled AND because no port was specified.  
 SSH defaults to port 22, which is now closed.)
 
@@ -125,8 +125,8 @@ SSH defaults to port 22, which is now closed.)
 * Port 22 is no longer accepting connections.
 
 ## SCREENSHOTS:
-[ssh-test-success](/03-ssh-hardening-&-securing-remote-access/screenshots/sshconnectionkali-ubuntu-success.png)  
-[ssh-test-failed](/03-ssh-hardening-&-securing-remote-access/screenshots/sshconnectionkali-ubuntu-failed.png)
+[ssh-test-success](/03-ssh-hardening-&-securing-remote-access/sshconnectionkali-ubuntu-success.png)  
+[ssh-test-failed](/03-ssh-hardening-&-securing-remote-access/sshconnectionkali-ubuntu-failed.png)
 
 
 
@@ -159,9 +159,8 @@ Expected: permitrootlogin no
 * Privilege escalation becomes significantly harder.
 
 ## SCREENSHOTS:
-[permitrootlogin-no](/03-ssh-hardening-&-securing-remote-access/screenshots/permitrootlogin-no.png)  
-[ssh-restart](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-restart.png)  
-[rootlogin-verification](/03-ssh-hardening-&-securing-remote-access/screenshots/rootlogin-verification.png)
+[permitrootlogin-prohibit-password](/03-ssh-hardening-&-securing-remote-access/screenshots/permitrootlogin-yes.png)  
+[permitrootlogin-no](/03-ssh-hardening-&-securing-remote-access/screenshots/permitrootlogin-no.png)
 
 Disabled root login over SSH.  
 This forces attackers to compromise a user account instead of directly attacking root.
@@ -188,7 +187,7 @@ This forces attackers to compromise a user account instead of directly attacking
 * Every other port becomes protected.
 
 ## SCREENSHOTS:
-[ufw-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ufw-status.png)
+[ufw-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ufw status.png)
 
 Enabled the UFW firewall and allowed only port 2222 for SSH.  
 This significantly reduces the system's attack surface.

@@ -112,11 +112,11 @@ ss -tulpn | grep 2222
 
 ###### 
 
-sshd\_config-port-change.png
+[ssh_config on port 22](/screenshots/ssh-port-22.png)
 
 
 
-ssh-new-port.png
+[ssh_config on port 2222](/screenshots/ssh-change-port-2222.png)
 
 
 
@@ -182,12 +182,11 @@ Expected output:
 
 
 
-sshd\_config-rootlogin.png
+[ssh_config rootLogin-yes](/screenshots/permitrootlogin-yes.png)
 
 
 
-permitrootlogin-verification.png
-
+[ssh_config rootLogin-no](/screenshots/permitrootlogin-no.png)
 
 
 
@@ -244,12 +243,11 @@ Attempted to log in directly as root (should fail):
 
 
 
-ssh-port-test.png
+[ssh-port-test-success](/screenshots/sshconnectionkali-ubuntu-success.png)
 
 
 
-ssh-root-login-failed.png
-
+[ssh-port-test-failed](/screenshots/sshconnectionkali-ubuntu-failed.png)
 
 
 

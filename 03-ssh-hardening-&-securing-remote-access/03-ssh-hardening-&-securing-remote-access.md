@@ -13,7 +13,7 @@
 * sudo usermod -aG sudo user_advanced
 * sudo usermod -aG sudo user_admin
 
-## WHAT YOU ARE LEARNING:
+## WHAT I LEARNED:
 * How Linux handles users and privilege levels.
 * Difference between a standard user and a sudo user.
 * Why least privilege is important in cybersecurity.
@@ -27,12 +27,11 @@
 * user_basic = no admin privileges.
 * user_advanced and user_admin = elevated privileges.
 
-## WHAT TO SCREENSHOT:
+## SCREENSHOTS:
 [passwd-tail](/03-ssh-hardening-&-securing-remote-access/screenshots/passwd-tail.png)  
 [groups-user-advanced](/03-ssh-hardening-&-securing-remote-access/screenshots/groups-user-advanced.png)  
 [groups-user-admin](/03-ssh-hardening-&-securing-remote-access/screenshots/groups-user-admin.png)
 
-## DOCUMENTATION TEXT:
 Created three different privilege-level users:
 * user_basic: no administrative privileges
 * user_advanced: sudo privileges
@@ -50,7 +49,7 @@ This demonstrates the principle of least privilege and shows how Linux separates
 ## At the bottom of the file, added:
 */2 * * * * echo "Cron working" >> /home/user_basic/cron-test.txt
 
-## WHAT YOU ARE LEARNING:
+## WHAT I LEARNED:
 * How Linux automation works.
 * How cron scheduling syntax operates.
 * Why automation is essential in real systems.
@@ -62,11 +61,10 @@ This demonstrates the principle of least privilege and shows how Linux separates
 * If the file does not exist, cron automatically creates it.
 * This confirms the automation is functioning correctly.
 
-## WHAT TO SCREENSHOT:
+## SCREENSHOTS:
 [crontab-entry](/03-ssh-hardening-&-securing-remote-access/screenshots/crontab-entry.png)  
 [cron-test-file](/03-ssh-hardening-&-securing-remote-access/screenshots/cron-test-file.png)
 
-## DOCUMENTATION TEXT:
 Configured a cron job to run every 2 minutes.  
 It writes text to a file to verify that automation is active.  
 Cron is heavily used for legitimate system tasks and is also abused in attacker persistence techniques.
@@ -89,7 +87,7 @@ To:
 ## Verification:
 * ss -tulpn | grep 2222
 
-## WHAT YOU ARE LEARNING:
+## WHAT I LEARNED:
 * How SSH configuration works.
 * Why port 22 is constantly scanned by attackers.
 * How changing ports reduces noise and automated brute-force attempts.
@@ -100,11 +98,10 @@ To:
 * SSH daemon rebinds to port 2222.
 * Automated bots scanning port 22 no longer find the service.
 
-## WHAT TO SCREENSHOT:
+## SCREENSHOTS:
 [sshd-config-port2222](/03-ssh-hardening-&-securing-remote-access/screenshots/sshd-config-port2222.png)  
 [ssh-port-listening](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-port-listening.png)
 
-## DOCUMENTATION TEXT:
 Changed the SSH service port from 22 to 2222.  
 Restarted SSH and confirmed the new port is active.  
 This reduces automated attack attempts and forces attackers to first discover the new port.
@@ -127,7 +124,7 @@ SSH defaults to port 22, which is now closed.)
 * Direct root login is fully blocked.
 * Port 22 is no longer accepting connections.
 
-## WHAT TO SCREENSHOT:
+## SCREENSHOTS:
 [ssh-test-success](/03-ssh-hardening-&-securing-remote-access/screenshots/sshconnectionkali-ubuntu-success.png)  
 [ssh-test-failed](/03-ssh-hardening-&-securing-remote-access/screenshots/sshconnectionkali-ubuntu-failed.png)
 
@@ -150,7 +147,7 @@ To:
 * sshd -T | grep rootlogin  
 Expected: permitrootlogin no
 
-## WHAT YOU ARE LEARNING:
+## WHAT I LEARNED:
 * Why root login is extremely dangerous.
 * How brute-force attacks always target "root" first.
 * How preventing root SSH access reduces the attack surface.
@@ -161,12 +158,11 @@ Expected: permitrootlogin no
 * Attackers must now first compromise a normal account.
 * Privilege escalation becomes significantly harder.
 
-## WHAT TO SCREENSHOT:
+## SCREENSHOTS:
 [permitrootlogin-no](/03-ssh-hardening-&-securing-remote-access/screenshots/permitrootlogin-no.png)  
 [ssh-restart](/03-ssh-hardening-&-securing-remote-access/screenshots/ssh-restart.png)  
 [rootlogin-verification](/03-ssh-hardening-&-securing-remote-access/screenshots/rootlogin-verification.png)
 
-## DOCUMENTATION TEXT:
 Disabled root login over SSH.  
 This forces attackers to compromise a user account instead of directly attacking root.
 
@@ -180,7 +176,7 @@ This forces attackers to compromise a user account instead of directly attacking
 * sudo ufw enable
 * sudo ufw status
 
-## WHAT YOU ARE LEARNING:
+## WHAT I LEARNED:
 * Basic Linux firewall management.
 * How firewalls control inbound network traffic.
 * Why organizations restrict exposed services.
@@ -191,10 +187,9 @@ This forces attackers to compromise a user account instead of directly attacking
 * Only SSH on port 2222 is accessible.
 * Every other port becomes protected.
 
-## WHAT TO SCREENSHOT:
+## SCREENSHOTS:
 [ufw-status](/03-ssh-hardening-&-securing-remote-access/screenshots/ufw-status.png)
 
-## DOCUMENTATION TEXT:
 Enabled the UFW firewall and allowed only port 2222 for SSH.  
 This significantly reduces the system's attack surface.
 

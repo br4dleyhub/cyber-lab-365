@@ -61,8 +61,8 @@ Output of: groups user\_admin
 1. ###### *user\_basic: no administrative privileges*
 2. ###### *user\_advanced: sudo privileges*
 3. ###### *user\_admin: sudo privileges*
-3. 
-*###### This demonstrates the principle of least privilege and shows how Linux separates normal users from administrators.*
+
+  ### This demonstrates the principle of least privilege and shows how Linux separates normal users from administrators.
 
 ## 
 

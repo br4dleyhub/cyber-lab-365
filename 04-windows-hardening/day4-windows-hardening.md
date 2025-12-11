@@ -2,8 +2,6 @@
 
 VM: Windows 10 
 
-
-
 *Today, I completed the full Windows hardening workflow. This included user management, password policy, log analysis, RDP configuration, PowerShell scripting, and firewall rules.*
 
 
@@ -86,22 +84,16 @@ Add → Administrators
 
 Screenshots :
 
-\[userlistwin](/04-windows-hardening/screenshots/userlistwin.png)
+[userlistwin](/04-windows-hardening/screenshots/userlistwin.png)
 
+[win\_advanced\_group\_membership](/04-windows-hardening/screenshots/win\_advanced\_group\_membership.png)
 
-
-\[win\_advanced\_group\_membership](/04-windows-hardening/screenshots/win\_advanced\_group\_membership.png)
-
-
-
-\[win\_admin\_group\_membership](/04-windows-hardening/screenshots/win\_admin\_group\_membership.png)
-
+[win\_admin\_group\_membership](/04-windows-hardening/screenshots/win\_admin\_group\_membership.png)
 
 
 
 
 ###### Create GPO for Password \& Lockout Policy
-
 
 
 1\. Open Local Group Policy Editor
@@ -148,19 +140,14 @@ Reset account counter after: 15 minutes
 
 Screenshots :
 
-\[password\_policy\_page](/04-windows-hardening/screenshots/password\_policy\_page.png)
+[password\_policy\_page](/04-windows-hardening/screenshots/password\_policy\_page.png)
 
-
-
-\[lockout\_policy\_page](/04-windows-hardening/screenshots/lockout\_policy\_page.png)
-
+[lockout\_policy\_page](/04-windows-hardening/screenshots/lockout\_policy\_page.png)
 
 
 
 
 ###### What I learned
-
-
 
 1. *How Windows stores security policies in the registry (Under: HKLM\\SECURITY\\Policy)*
 2. *How companies prevent brute-force attacks*
@@ -172,93 +159,54 @@ Screenshots :
 
 ###### Enable \& Read Event Viewer Logs
 
-
-
 1\. Open Event Viewer
 
 **Win + R → eventvwr.msc**
 
 
-
 Go to:
-
 **Windows Logs → Security**
 
-
-
 *This log is critical for SOC monitoring.*
-
 
 
 2\. Generate some logs
 
 Perform:
-
-
-
 Wrong password attempts
-
-
-
 Switch users
-
-
-
 Add/remove a user
-
-
-
 Change password policy
-
 
 
 These actions create the following events:
 
 4624 — Successful login
-
 4625 — Failed login
-
 4720 — User account created
-
 4728 — User added to group
-
 4732 — User added to admin group
-
 1102 — Logs cleared (HIGH severity)
 
 
-
 3\. Open an event and analyze:
-
 You want to see:
 
-
-
 Originating account
-
 Logon type
-
 Network address
-
 Privileges
 
 
-
 Screenshots :
+[security\_log\_list](/04-windows-hardening/screenshots/security\_log\_list.png)
 
-\[security\_log\_list](/04-windows-hardening/screenshots/security\_log\_list.png)
-
-
-
-\[one\_event\_with\_details](/04-windows-hardening/screenshots/one\_event\_with\_details.png)
-
+[one\_event\_with\_details](/04-windows-hardening/screenshots/one\_event\_with\_details.png)
 
 
 
 
 ###### **What I learned**
-
-
 
 1. *How SOC teams monitor authentication*
 2. *How attackers trigger Event IDs when guessing passwords*
@@ -266,145 +214,82 @@ Screenshots :
 
 
 
-
-
 ###### Enable RDP (Remote Desktop)
-
-
 
 1\. Open Remote Desktop settings
 
 SystemPropertiesRemote.exe
-
 or Settings → System → Remote Desktop
-
 
 
 2\. Enable RDP
 
 ✔ Turn ON: Allow remote connections to this computer
-
 ✔ Allow through firewall when Windows asks
 
 
 
 Screenshots :
 
-\[RDP\_enabled](/04-windows-hardening/screenshots/RDP\_enabled.png)
-
+[RDP\_enabled](/04-windows-hardening/screenshots/RDP\_enabled.png)
 
 
 ###### Why this matters
-
-
 
 * RDP is commonly attacked (brute force, ransomware)
 * Used in lateral movement in real incidents
 * You must learn how to enable and secure it
 
 
-
-
-
 ###### **Create a PowerShell Automation Script**
-
-
 
 *You will collect system information automatically.*
 
-
-
 1\. Open Notepad
-
 notepad system-info.ps1
-
-
 
 Paste:
 
-
-
 System Information Collection Script
 
-
-
 Write-Output "=== SYSTEM INFO REPORT ==="
-
 Get-Date
-
 Get-ComputerInfo | Select-Object CsName, WindowsVersion, OsArchitecture
-
 Get-LocalUser
-
 Get-LocalGroupMember -Group "Administrators"
-
 Get-WmiObject Win32\_LogicalDisk
-
-
 
 Save → Desktop.
 
 
-
 2\. Run the script
-
 powershell -ExecutionPolicy Bypass -File .\\system-info.ps1
 
-
-
 If the window opens and closes instantly, run from an open PowerShell with:
-
-powershell -NoExit -File .\\system-info.ps1
-
-or add at the end: Read-Host "Press Enter to exit"
-
+powershell -NoExit -File .\\system-info.ps1 or add at the end: Read-Host "Press Enter to exit"
 
 
 Screenshots :
-
-\[system-info-script](/04-windows-hardening/screenshots/system-info-script.png)
-
-
-
-\[powershell\_output](/04-windows-hardening/screenshots/powershell\_output.png)
-
-
-
+[system-info-script](/04-windows-hardening/screenshots/system-info-script.png)
+[powershell\_output](/04-windows-hardening/screenshots/powershell\_output.png)
 
 
 ###### **What I learned**
-
-
 
 1. *Basic PowerShell scripting*
 2. *How analysts collect system info quickly*
 3. *Execution policies*
 
 
-
-
-
-
-
 ###### **Windows Firewall Basics** 
-
-
 
 1\. Open firewall console
 
 control firewall.cpl
-
-
-
 * *Click Advanced Settings*
 
-
-
 2\. Check inbound rules
-
 Scroll and take note of rules like:
-
-
 
 * *RDP (TCP 3389)*
 * File and Printer Sharing
@@ -412,76 +297,40 @@ Scroll and take note of rules like:
 * SSH if installed
 
 
-
 3\. Create a custom rule (practice)
-
 Inbound Rules → New Rule
-
 Choose: Port
-
 TCP
-
 Port: 3389 (RDP)
-
 Allow the connection
-
 Name: RDP-Custom
 
 
-
 Screenshots :
+[advanced\_firewall\_window](/04-windows-hardening/screenshots/advanced\_firewall\_window.png)
 
-\[advanced\_firewall\_window](/04-windows-hardening/screenshots/advanced\_firewall\_window.png)
-
-
-
-\[custom\_rule](/04-windows-hardening/screenshots/custom\_rule.png)
-
-
-
+[custom\_rule](/04-windows-hardening/screenshots/custom\_rule.png)
 
 
 ###### **What I learned**
-
-
 
 1. *How host-based firewalls work*
 2. *Why RDP, SMB, and remote services are dangerous if exposed*
 3. *How SOC teams detect blocked/allowed traffic*
 
 
-
-
-
-
-
 ###### DAY 4 IS 100% COMPLETE 
 
-
-
 *✔ Users created (win\_basic / win\_advanced / win\_admin)*
-
 *✔ Groups configured (Power Users / Administrators)*
-
 *✔ Password \& lockout policy created*
-
 *✔ Event Viewer logs generated + reviewed*
-
 *✔ RDP enabled*
-
 *✔ PowerShell script created + executed*
-
 *✔ Windows Firewall checked + new rule created*
 
 
-
-
-
-
-
 ###### **WHAT I DID TODAY:**
-
-
 
 * I created Windows users and assigned privilege levels (win\_basic, win\_advanced, win\_admin).
 * I configured password and lockout policies via Local Group Policy.
@@ -491,12 +340,7 @@ Screenshots :
 * I reviewed Windows Firewall rules and created a custom rule.
 
 
-
-
-
 ###### **WHAT I LEARNED:**
-
-
 
 1. *How Windows manages accounts, groups, and privileges.*
 2. *How to enforce security policy via Group Policy and the registry.*
@@ -506,12 +350,7 @@ Screenshots :
 6. *How host-based firewall rules control network exposure.*
 
 
-
-
-
 ###### **WHY IT IS IMPORTANT:**
-
-
 
 * ***Implementing least privilege and strong password policies reduces the chance of account compromise.***
 * ***Account lockouts protect against brute-force attacks.***

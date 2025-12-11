@@ -1,4 +1,4 @@
-# DAY 4 — LINUX HARDENING (Ubuntu Server)
+# DAY 3 — LINUX HARDENING (Ubuntu Server)
 
 ## VM: Ubuntu Server — IP 192.168.187.70
 

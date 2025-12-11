@@ -156,10 +156,15 @@ Open Notepad → save as `system-info.ps1`
 
 ```powershell```
 Write-Output "=== SYSTEM INFO REPORT ==="
+
 Get-Date
+
 Get-ComputerInfo | Select-Object CsName, WindowsVersion, OsArchitecture
+
 Get-LocalUser
+
 Get-LocalGroupMember -Group "Administrators"
+
 Get-WmiObject Win32_LogicalDisk 
 
 
@@ -174,6 +179,7 @@ powershell -NoExit -File .\\system-info.ps1 or add at the end: Read-Host "Press 
 
 
 Screenshots :
+
 [system-info-script](/04-windows-hardening/screenshots/system-info-script.png)
 [powershell\_output](/04-windows-hardening/screenshots/powershell\_output.png)
 
@@ -211,8 +217,8 @@ Name: RDP-Custom
 
 
 Screenshots :
-[advanced\_firewall\_window](/04-windows-hardening/screenshots/advanced\_firewall\_window.png)
 
+[advanced\_firewall\_window](/04-windows-hardening/screenshots/advanced\_firewall\_window.png)
 [custom\_rule](/04-windows-hardening/screenshots/custom\_rule.png)
 
 
@@ -226,11 +232,17 @@ Screenshots :
 ###### DAY 4 IS 100% COMPLETE 
 
 *✔ Users created (win\_basic / win\_advanced / win\_admin)*
+
 *✔ Groups configured (Power Users / Administrators)*
+
 *✔ Password \& lockout policy created*
+
 *✔ Event Viewer logs generated + reviewed*
+
 *✔ RDP enabled*
+
 *✔ PowerShell script created + executed*
+
 *✔ Windows Firewall checked + new rule created*
 
 

@@ -1,263 +1,167 @@
-#### DAY 4 — WINDOWS HARDENING 
+#### **DAY 4 — WINDOWS HARDENING**  
+_VM: Windows 10_
 
-VM: Windows 10 
+Today, I completed the full Windows hardening workflow. This included user management, password and lockout policies, log analysis, RDP configuration, PowerShell scripting, and firewall rules.
 
-*Today, I completed the full Windows hardening workflow. This included user management, password policy, log analysis, RDP configuration, PowerShell scripting, and firewall rules.*
+---
 
+### **Create Users & Groups**
 
+**1. Open Computer Management**  
+`Win + R` → `compmgmt.msc`  
+Navigate to: **Local Users and Groups → Users**
 
-###### Create Users + Groups
+**2. Create three users**  
+Right-click → **New User…**
 
-1\. Open Computer Management
+**User 1 — Basic User**  
+- Username: `win_basic`  
+- Password: anything  
+- ✔ Password never expires  
+- ✘ User must change password at next logon  
 
-Win + R → compmgmt.msc
+**User 2 — Advanced User**  
+- Username: `win_advanced`  
+- Same password rules  
 
+**User 3 — Admin User**  
+- Username: `win_admin`  
+- Strong password  
 
+Click **Create → Close**.
 
-Go to:
+**3. Assign groups**
 
-Local Users and Groups → Users
+**`win_basic`**  
+- Default (no change)
 
+**`win_advanced`**  
+- Member Of → Add → **Power Users**
 
+**`win_admin`**  
+- Member Of → Add → **Administrators**
 
-2\. Create three users
+**Screenshots:**  
+[userlistwin](/04-windows-hardening/screenshots/userlistwin.png)  
+[win_advanced_group_membership](/04-windows-hardening/screenshots/win_advanced_group_membership.png)  
+[win_admin_group_membership](/04-windows-hardening/screenshots/win_admin_group_membership.png)
 
-Right-click → New User…
+---
 
+### **Create GPO for Password & Lockout Policy**
 
+**1. Open Local Group Policy Editor**  
+`Win + R` → `gpedit.msc`
 
-User 1 (Basic User)
+Navigate to:  
+**Computer Configuration → Windows Settings → Security Settings → Account Policies → Password Policy**
 
-Username: win\_basic
+**2. Configure password policies**
 
-Password: anything
+- Minimum password length: **12**  
+- Enforce password history: **5**  
+- Maximum password age: **30 days**  
+- Minimum password age: **1 day**  
+- Password must meet complexity: **Enabled**
 
-✔ Password never expires
+**3. Configure Account Lockout Policy**
 
-✘ User must change password at next logon
+Navigate to: **Account Lockout Policy**
 
+- Account lockout threshold: **5**  
+- Account lockout duration: **15 minutes**  
+- Reset account counter after: **15 minutes**
 
+**Screenshots:**  
+[password_policy_page](/04-windows-hardening/screenshots/password_policy_page.png)  
+[lockout_policy_page](/04-windows-hardening/screenshots/lockout_policy_page.png)
 
-User 2 (Advanced User)
+#### *What I learned*
+- Windows stores security policy in the registry (`HKLM\SECURITY\Policy`)  
+- Lockout policies reduce brute-force attacks  
+- Password aging and complexity improve account security  
 
-Username: win\_advanced
+---
 
-Same password rules
+### **Enable & Read Event Viewer Logs**
 
+**1. Open Event Viewer**  
+`Win + R` → `eventvwr.msc`  
+Navigate to: **Windows Logs → Security**
 
+This log is essential for SOC monitoring.
 
-User 3 (Admin User)
+**2. Generate logs**
 
-Username: win\_admin
+Perform actions such as:  
+- Wrong password attempts  
+- Switching users  
+- Creating/removing accounts  
+- Editing password policies  
 
-Strong password
+These trigger key event IDs:
 
+- **4624** — Successful logon  
+- **4625** — Failed logon  
+- **4720** — User account created  
+- **4728** — User added to a group  
+- **4732** — User added to Admin group  
+- **1102** — Security logs cleared (critical)
 
+**3. Analyze one event**
 
-Click Create → Close.
+Look for:  
+- Originating account  
+- Logon type  
+- Network address  
+- User privileges  
 
+**Screenshots:**  
+[security_log_list](/04-windows-hardening/screenshots/security_log_list.png)  
+[one_event_with_details](/04-windows-hardening/screenshots/one_event_with_details.png)
 
+#### *What I learned*
+- How SOC teams monitor authentication  
+- How brute-force attempts appear in logs  
+- How to analyze security-critical Windows events  
 
-3\. Assign groups
+---
 
-win\_basic
+### **Enable RDP (Remote Desktop)**
 
-(default, no change)
+**1. Open RDP settings**  
+Run: `SystemPropertiesRemote.exe`  
+or go to: **Settings → System → Remote Desktop**
 
+**2. Enable RDP**  
+- ✔ Allow remote connections to this computer  
+- ✔ Allow through Windows Firewall  
 
+**Screenshot:**  
+[RDP_enabled](/04-windows-hardening/screenshots/RDP_enabled.png)
 
-win\_advanced
+#### *Why this matters*
+- RDP is a top attack vector for ransomware  
+- Used in lateral movement during intrusions  
+- Must be secured and monitored carefully  
 
-Double-click user → Member Of
+---
 
-Add → Power Users
+### **Create a PowerShell Automation Script**
 
+This script collects basic system information automatically.
 
+**1. Create the script**  
+Open Notepad → save as `system-info.ps1`
 
-win\_admin
-
-Double-click user → Member Of
-
-Add → Administrators
-
-
-
-Screenshots :
-
-[userlistwin](/04-windows-hardening/screenshots/userlistwin.png)
-
-[win\_advanced\_group\_membership](/04-windows-hardening/screenshots/win\_advanced\_group\_membership.png)
-
-[win\_admin\_group\_membership](/04-windows-hardening/screenshots/win\_admin\_group\_membership.png)
-
-
-
-
-###### Create GPO for Password \& Lockout Policy
-
-
-1\. Open Local Group Policy Editor
-
-Win + R → gpedit.msc
-
-
-
-Navigate to:
-
-Computer Configuration → Windows Settings → Security Settings → Account Policies → Password Policy
-
-
-
-2\. Configure password policies:
-
-Minimum password length: 12
-
-Enforce password history: 5
-
-Maximum password age: 30 days
-
-Minimum password age: 1 day
-
-Password must meet complexity: Enabled
-
-
-
-3\. Configure Account Lockout Policy (also required)
-
-Go to: Account Lockout Policy
-
-
-
-Set:
-
-Account lockout threshold: 5
-
-Account lockout duration: 15 minutes
-
-Reset account counter after: 15 minutes
-
-
-
-Screenshots :
-
-[password\_policy\_page](/04-windows-hardening/screenshots/password\_policy\_page.png)
-
-[lockout\_policy\_page](/04-windows-hardening/screenshots/lockout\_policy\_page.png)
-
-
-
-
-###### What I learned
-
-1. *How Windows stores security policies in the registry (Under: HKLM\\SECURITY\\Policy)*
-2. *How companies prevent brute-force attacks*
-3. *How password aging and complexity protect accounts*
-
-
-
-
-
-###### Enable \& Read Event Viewer Logs
-
-1\. Open Event Viewer
-
-**Win + R → eventvwr.msc**
-
-
-Go to:
-**Windows Logs → Security**
-
-*This log is critical for SOC monitoring.*
-
-
-2\. Generate some logs
-
-Perform:
-Wrong password attempts
-Switch users
-Add/remove a user
-Change password policy
-
-
-These actions create the following events:
-
-4624 — Successful login
-4625 — Failed login
-4720 — User account created
-4728 — User added to group
-4732 — User added to admin group
-1102 — Logs cleared (HIGH severity)
-
-
-3\. Open an event and analyze:
-You want to see:
-
-Originating account
-Logon type
-Network address
-Privileges
-
-
-Screenshots :
-[security\_log\_list](/04-windows-hardening/screenshots/security\_log\_list.png)
-
-[one\_event\_with\_details](/04-windows-hardening/screenshots/one\_event\_with\_details.png)
-
-
-
-
-###### **What I learned**
-
-1. *How SOC teams monitor authentication*
-2. *How attackers trigger Event IDs when guessing passwords*
-3. *How to identify suspicious activity from logs*
-
-
-
-###### Enable RDP (Remote Desktop)
-
-1\. Open Remote Desktop settings
-
-SystemPropertiesRemote.exe
-or Settings → System → Remote Desktop
-
-
-2\. Enable RDP
-
-✔ Turn ON: Allow remote connections to this computer
-✔ Allow through firewall when Windows asks
-
-
-
-Screenshots :
-
-[RDP\_enabled](/04-windows-hardening/screenshots/RDP\_enabled.png)
-
-
-###### Why this matters
-
-* RDP is commonly attacked (brute force, ransomware)
-* Used in lateral movement in real incidents
-* You must learn how to enable and secure it
-
-
-###### **Create a PowerShell Automation Script**
-
-*You will collect system information automatically.*
-
-1\. Open Notepad
-notepad system-info.ps1
-
-Paste:
-
-System Information Collection Script
-
+```powershell```
 Write-Output "=== SYSTEM INFO REPORT ==="
 Get-Date
 Get-ComputerInfo | Select-Object CsName, WindowsVersion, OsArchitecture
 Get-LocalUser
 Get-LocalGroupMember -Group "Administrators"
-Get-WmiObject Win32\_LogicalDisk
+Get-WmiObject Win32_LogicalDisk 
+
 
 Save → Desktop.
 

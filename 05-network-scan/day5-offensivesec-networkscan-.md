@@ -435,7 +435,7 @@ Metasploitable2	       Highly Vulnerable      High (Primary Target)
  
   *FINAL SKILL CHECK — What YOU should be able to answer now*
 * *These questions prove you mastered Day 5:*
-* Which machine is the most vulnerable and why?*
+* *Which machine is the most vulnerable and why?*
 * *Which service is the best initial attack vector?*
 * *How many open ports does Windows have compared to Metasploitable2?*
 * *What critical weaknesses did Nikto find?*

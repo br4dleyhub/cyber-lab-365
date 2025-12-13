@@ -83,11 +83,11 @@ Observation:
 
 Screenshots:
 
-[kalipingwindows](/04-windows-hardening/screenshots/kalipingwindows.png)
+[kalipingwindows](/05-network-scan/screenshots/kalipingwindows.png)
 
 
 
-[kalipingmetasploitable2](/04-windows-hardening/screenshots/kalipingmetasploitable2.png)
+[kalipingmetasploitable2](/05-network-scan/screenshots/kalipingmetasploitable2.png)
 
 
 ##
@@ -129,11 +129,11 @@ This confirms **Windows is not the primary exploitation target** but will be imp
 
 Screenshots:
 
-[fullnmapwindows1](/04-windows-hardening/screenshots/fullnmapwindows1.png)
+[fullnmapwindows1](/05-network-scan/screenshots/fullnmapwindows1.png)
 
 
 
-[fullnmapwindows2](/04-windows-hardening/screenshots/fullnmapwindows2.png)
+[fullnmapwindows2](/05-network-scan/screenshots/fullnmapwindows2.png)
 
 
 ##
@@ -170,23 +170,23 @@ Screenshots:
 
 
 
-[fullnmapmetasploitable2-1](/04-windows-hardening/screenshots/fullnmapmetasploitable2-1.png)
+[fullnmapmetasploitable2-1](/05-network-scan/screenshots/fullnmapmetasploitable2-1.png)
 
 
 
-[fullnmapmetasploitable2-2](/04-windows-hardening/screenshots/fullnmapmetasploitable2-2.png)
+[fullnmapmetasploitable2-2](/05-network-scan/screenshots/fullnmapmetasploitable2-2.png)
 
 
 
-[fullnmapmetasploitable2-3](/04-windows-hardening/screenshots/fullnmapmetasploitable2-3.png)
+[fullnmapmetasploitable2-3](/05-network-scan/screenshots/fullnmapmetasploitable2-3.png)
 
 
 
-[fullnmapmetasploitable2-4](/04-windows-hardening/screenshots/fullnmapmetasploitable2-4.png)
+[fullnmapmetasploitable2-4](/05-network-scan/screenshots/fullnmapmetasploitable2-4.png)
 
 
 
-[fullnmapmetasploitable2-5](/04-windows-hardening/screenshots/fullnmapmetasploitable2-5.png)
+[fullnmapmetasploitable2-5](/05-network-scan/screenshots/fullnmapmetasploitable2-5.png)
 
 ##
 ##
@@ -215,7 +215,7 @@ Purpose:
 
 Screenshot:
 
-[websitemetasploitable2](/04-windows-hardening/screenshots/websitemetasploitable2.png)
+[websitemetasploitable2](/05-network-scan/screenshots/websitemetasploitable2.png)
 
 ##
 ##
@@ -250,11 +250,11 @@ Screenshots:
 
 
 
-[niktometasploitable2-1](/04-windows-hardening/screenshots/niktometasploitable2-1.png)
+[niktometasploitable2-1](/05-network-scan/screenshots/niktometasploitable2-1.png)
 
 
 
-[niktometasploitable2-2](/04-windows-hardening/screenshots/niktometasploitable2-2.png)
+[niktometasploitable2-2](/05-network-scan/screenshots/niktometasploitable2-2.png)
 
 
 ##
@@ -295,19 +295,19 @@ Screenshots:
 
 
 
-[enum4linux-windows](/04-windows-hardening/screenshots/enum4linux-windows.png)
+[enum4linux-windows](/05-network-scan/screenshots/enum4linux-windows.png)
 
 
 
-[enum4linux-metasploitable2](/04-windows-hardening/screenshots/enum4linux-metasploitable2.png)
+[enum4linux-metasploitable2](/05-network-scan/screenshots/enum4linux-metasploitable2.png)
 
 
 
-[enum4linux-metasploitable2-1](/04-windows-hardening/screenshots/enum4linux-metasploitable2-1.png)
+[enum4linux-metasploitable2-1](/05-network-scan/screenshots/enum4linux-metasploitable2-1.png)
 
 
 
-[enum4linux-metasploitable2-2](/04-windows-hardening/screenshots/enum4linux-metasploitable2-2.png)
+[enum4linux-metasploitable2-2](/05-network-scan/screenshots/enum4linux-metasploitable2-2.png)
 
 
 
@@ -315,15 +315,15 @@ Screenshots:
 
 
 
-[enum4linux-metasploitable2-4](/04-windows-hardening/screenshots/enum4linux-metasploitable2-4.png)
+[enum4linux-metasploitable2-4](/05-network-scan/screenshots/enum4linux-metasploitable2-4.png)
 
 
 
-[enum4linux-metasploitable2-5](/04-windows-hardening/screenshots/enum4linux-metasploitable2-5.png)
+[enum4linux-metasploitable2-5](/05-network-scan/screenshots/enum4linux-metasploitable2-5.png)
 
 
 
-[enum4linux-metasploitable2-6](/04-windows-hardening/screenshots/enum4linux-metasploitable2-6.png)
+[enum4linux-metasploitable2-6](/05-network-scan/screenshots/enum4linux-metasploitable2-6.png)
 
 
 ##
@@ -356,7 +356,7 @@ Screenshot:
 
 
 
-[ftp-banner-version](/04-windows-hardening/screenshots/ftp-banner-version.png)
+[ftp-banner-version](/05-network-scan/screenshots/ftp-banner-version.png)
 
 
 ##
@@ -385,11 +385,11 @@ Screenshot:
 
 
 
-[ssh-version-metasploitable2](/04-windows-hardening/screenshots/ssh-version-metasploitable2.png)
+[ssh-version-metasploitable2](/05-network-scan/screenshots/ssh-version-metasploitable2.png)
 
 
 
-[ssh-version-windows](/04-windows-hardening/screenshots/ssh-version-windows.png)
+[ssh-version-windows](/05-network-scan/screenshots/ssh-version-windows.png)
 
 
 ##

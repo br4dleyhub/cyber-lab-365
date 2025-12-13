@@ -83,11 +83,11 @@ Observation:
 
 Screenshots:
 
-\[kalipingwindows]()
+[kalipingwindows](/04-windows-hardening/screenshots/kalipingwindows.png)
 
 
 
-\[kalipingmetasploitable2]()
+[kalipingmetasploitable2](/04-windows-hardening/screenshots/kalipingmetasploitable2.png)
 
 
 
@@ -129,11 +129,11 @@ This confirms **Windows is not the primary exploitation target** but will be imp
 
 Screenshots:
 
-\[fullnmapwindows1]()
+[fullnmapwindows1](/04-windows-hardening/screenshots/fullnmapwindows1.png)
 
 
 
-\[fullnmapwindows2]()
+[fullnmapwindows2](/04-windows-hardening/screenshots/fullnmapwindows2.png)
 
 
 
@@ -170,23 +170,23 @@ Screenshots:
 
 
 
-\[fullnmapmetasploitable2-1]()
+[fullnmapmetasploitable2-1](/04-windows-hardening/screenshots/fullnmapmetasploitable2-1.png)
 
 
 
-\[fullnmapmetasploitable2-2]()
+[fullnmapmetasploitable2-2](/04-windows-hardening/screenshots/fullnmapmetasploitable2-2.png)
 
 
 
-\[fullnmapmetasploitable2-3]()
+[fullnmapmetasploitable2-3](/04-windows-hardening/screenshots/fullnmapmetasploitable2-3.png)
 
 
 
-\[fullnmapmetasploitable2-4]()
+[fullnmapmetasploitable2-4](/04-windows-hardening/screenshots/fullnmapmetasploitable2-4.png)
 
 
 
-\[fullnmapmetasploitable2-5]()
+[fullnmapmetasploitable2-5](/04-windows-hardening/screenshots/fullnmapmetasploitable2-5.png)
 
 
 
@@ -214,7 +214,7 @@ Purpose:
 
 Screenshot:
 
-* websitemetasploitable2
+[websitemetasploitable2](/04-windows-hardening/screenshots/websitemetasploitable2.png)
 
 
 
@@ -248,11 +248,11 @@ Screenshots:
 
 
 
-\[niktometasploitable2-1]()
+[niktometasploitable2-1](/04-windows-hardening/screenshots/niktometasploitable2-1.png)
 
 
 
-\[niktometasploitable2-2]()
+[niktometasploitable2-2](/04-windows-hardening/screenshots/niktometasploitable2-2.png)
 
 
 
@@ -292,35 +292,35 @@ Screenshots:
 
 
 
-\[enum4linux-windows]()
+[enum4linux-windows](/04-windows-hardening/screenshots/enum4linux-windows.png)
 
 
 
-\[enum4linux-metasploitable2]()
+[enum4linux-metasploitable2](/04-windows-hardening/screenshots/enum4linux-metasploitable2.png)
 
 
 
-\[enum4linux-metasploitable2-1]()
+[enum4linux-metasploitable2-1](/04-windows-hardening/screenshots/enum4linux-metasploitable2-1.png)
 
 
 
-\[enum4linux-metasploitable2-2]()
+[enum4linux-metasploitable2-2](/04-windows-hardening/screenshots/enum4linux-metasploitable2-2.png)
 
 
 
-\[enum4linux-metasploitable2-3]()
+[enum4linux-metasploitable2-3](/04-windows-hardening/screenshots/enum4linux-metasploitable2-3.png)
 
 
 
-\[enum4linux-metasploitable2-4]()
+[enum4linux-metasploitable2-4](/04-windows-hardening/screenshots/enum4linux-metasploitable2-4.png)
 
 
 
-\[enum4linux-metasploitable2-5]()
+[enum4linux-metasploitable2-5](/04-windows-hardening/screenshots/enum4linux-metasploitable2-5.png)
 
 
 
-\[enum4linux-metasploitable2-6]()
+[enum4linux-metasploitable2-6](/04-windows-hardening/screenshots/enum4linux-metasploitable2-6.png)
 
 
 
@@ -352,7 +352,7 @@ Screenshot:
 
 
 
-\[ftp-banner-version]()
+[ftp-banner-version](/04-windows-hardening/screenshots/ftp-banner-version.png)
 
 
 
@@ -380,11 +380,11 @@ Screenshot:
 
 
 
-\[ssh-version-metasploitable2]()
+[ssh-version-metasploitable2](/04-windows-hardening/screenshots/ssh-version-metasploitable2.png)
 
 
 
-\[ssh-version-windows]()
+[ssh-version-windows](/04-windows-hardening/screenshots/ssh-version-windows.png)
 
 
 
@@ -392,9 +392,9 @@ Screenshot:
 
 ##### Analysis \& Attacker Mindset
 
-Machine	Security           Level	      Attack Priority
+Machine	Security           Level	            Attack Priority
 
-Windows	Hardened	   Low
+Windows	Hardened	          Low
 
 Metasploitable2	       Highly Vulnerable      High (Primary Target)
 

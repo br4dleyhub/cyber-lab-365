@@ -26,8 +26,8 @@
 * This phase focuses only on practical actions. Documentation reflects real commands and real outputs.
 
 
-
-
+##
+##
 
 ##### **🧪 Lab Environment**
 
@@ -41,17 +41,17 @@ Targets  ---> Windows — 192.168.187.60 (Hardened)
 
 
 
-&nbsp;	 ---> Metasploitable2 — 192.168.187.40 (Intentionally vulnerable)
+&nbsp; ***** ---> Metasploitable2 — 192.168.187.40 (Intentionally vulnerable)
 
 
 
 Ubuntu Server was removed prior to this phase and is not part of Day 5 activities.
 
 
+##
+##
 
-
-
-##### **Step 1 — Network Reachability Verification**
+##### **Step 6.1 — Network Reachability Verification**
 
 
 
@@ -83,17 +83,17 @@ Observation:
 
 Screenshots:
 
-\[kalipingwindows]()
+[kalipingwindows](/05-network-scan/screenshots/kalipingwindows.png)
 
 
 
-\[kalipingmetasploitable2]()
+[kalipingmetasploitable2](/05-network-scan/screenshots/kalipingmetasploitable2.png)
 
 
+##
+##
 
-
-
-##### **Step 2 — Full Network Scan (Windows)**
+##### **Step 6.2 — Full Network Scan (Windows)**
 
 
 
@@ -129,17 +129,17 @@ This confirms **Windows is not the primary exploitation target** but will be imp
 
 Screenshots:
 
-\[fullnmapwindows1]()
+[fullnmapwindows1](/05-network-scan/screenshots/fullnmapwindows1.png)
 
 
 
-\[fullnmapwindows2]()
+[fullnmapwindows2](/05-network-scan/screenshots/fullnmapwindows2.png)
 
 
+##
+##
 
-
-
-##### **Step 3 — Full Network Scan (Metasploitable2)**
+##### **Step 6.3 — Full Network Scan (Metasploitable2)**
 
 
 
@@ -170,27 +170,28 @@ Screenshots:
 
 
 
-\[fullnmapmetasploitable2-1]()
+[fullnmapmetasploitable2-1](/05-network-scan/screenshots/fullnmapmetasploitable2-1.png)
 
 
 
-\[fullnmapmetasploitable2-2]()
+[fullnmapmetasploitable2-2](/05-network-scan/screenshots/fullnmapmetasploitable2-2.png)
 
 
 
-\[fullnmapmetasploitable2-3]()
+[fullnmapmetasploitable2-3](/05-network-scan/screenshots/fullnmapmetasploitable2-3.png)
 
 
 
-\[fullnmapmetasploitable2-4]()
+[fullnmapmetasploitable2-4](/05-network-scan/screenshots/fullnmapmetasploitable2-4.png)
 
 
 
-\[fullnmapmetasploitable2-5]()
+[fullnmapmetasploitable2-5](/05-network-scan/screenshots/fullnmapmetasploitable2-5.png)
 
+##
+##
 
-
-##### **Step 4 — Web Service Enumeration**
+##### **Step 6.4 — Web Service Enumeration**
 
 
 
@@ -214,9 +215,10 @@ Purpose:
 
 Screenshot:
 
-* websitemetasploitable2
+[websitemetasploitable2](/05-network-scan/screenshots/websitemetasploitable2.png)
 
-
+##
+##
 
 ##### *4.2 Web Vulnerability Scanning*
 
@@ -246,19 +248,22 @@ Key Findings:
 
 Screenshots:
 
-
-
-\[niktometasploitable2-1]()
-
-
-
-\[niktometasploitable2-2]()
+[niktometasploitable2](/05-network-scan/screenshots/niktometasploitable2.png)
 
 
 
+[niktometasploitable2-1](/05-network-scan/screenshots/niktometasploitable2-1.png)
 
 
-##### **Step 5 — SMB Enumeration (Windows \& Metasploitable2)**
+
+[niktometasploitable2-2](/05-network-scan/screenshots/niktometasploitable2-2.png)
+
+
+##
+##
+
+
+##### **Step 6.5 — SMB Enumeration (Windows \& Metasploitable2)**
 
 
 
@@ -292,41 +297,42 @@ Screenshots:
 
 
 
-\[enum4linux-windows]()
+[enum4linux-windows](/05-network-scan/screenshots/enum4linux-windows.png)
 
 
 
-\[enum4linux-metasploitable2]()
+[enum4linux-metasploitable2](/05-network-scan/screenshots/enum4linux-metasploitable2.png)
 
 
 
-\[enum4linux-metasploitable2-1]()
+[enum4linux-metasploitable2-1](/05-network-scan/screenshots/enum4linux-metasploitable2-1.png)
 
 
 
-\[enum4linux-metasploitable2-2]()
+[enum4linux-metasploitable2-2](/05-network-scan/screenshots/enum4linux-metasploitable2-2.png)
 
 
 
-\[enum4linux-metasploitable2-3]()
+[enum4linux-metasploitable2-3](/04-windows-hardening/screenshots/enum4linux-metasploitable2-3.png)
 
 
 
-\[enum4linux-metasploitable2-4]()
+[enum4linux-metasploitable2-4](/05-network-scan/screenshots/enum4linux-metasploitable2-4.png)
 
 
 
-\[enum4linux-metasploitable2-5]()
+[enum4linux-metasploitable2-5](/05-network-scan/screenshots/enum4linux-metasploitable2-5.png)
 
 
 
-\[enum4linux-metasploitable2-6]()
+[enum4linux-metasploitable2-6](/05-network-scan/screenshots/enum4linux-metasploitable2-6.png)
 
 
+##
+##
 
 
-
-##### **Step 6 — Service Version Enumeration (FTP \& SSH)**
+##### **Step 6.6 — Service Version Enumeration (FTP \& SSH)**
 
 
 
@@ -352,10 +358,11 @@ Screenshot:
 
 
 
-\[ftp-banner-version]()
+[ftp-banner-version](/05-network-scan/screenshots/ftp-banner-version.png)
 
 
-
+##
+##
 
 
 ###### SSH Version Enumeration
@@ -380,25 +387,26 @@ Screenshot:
 
 
 
-\[ssh-version-metasploitable2]()
+[ssh-version-metasploitable2](/05-network-scan/screenshots/ssh-version-metasploitable2.png)
 
 
 
-\[ssh-version-windows]()
+[ssh-version-windows](/05-network-scan/screenshots/ssh-version-windows.png)
 
 
-
+##
+##
 
 
 ##### Analysis \& Attacker Mindset
 
-Machine	Security           Level	      Attack Priority
+Machine	Security           Level	            Attack Priority
 
-Windows	Hardened	   Low
+Windows	Hardened	          Low
 
 Metasploitable2	       Highly Vulnerable      High (Primary Target)
 
-
+##
 
 ##### Primary Attack Vectors Identified
 
@@ -410,7 +418,7 @@ Metasploitable2	       Highly Vulnerable      High (Primary Target)
 * Legacy daemons
 
 
-
+##
 
 
 ##### **Day 5 Outcome**
@@ -422,3 +430,14 @@ Metasploitable2	       Highly Vulnerable      High (Primary Target)
 * *Ability to distinguish hardened vs vulnerable systems*
 * *Preparation for controlled exploitation*
 * *Evidence-based decision making*
+  
+ ##
+ 
+  *FINAL SKILL CHECK — What YOU should be able to answer now*
+* *These questions prove you mastered Day 5:*
+* *Which machine is the most vulnerable and why?*
+* *Which service is the best initial attack vector?*
+* *How many open ports does Windows have compared to Metasploitable2?*
+* *What critical weaknesses did Nikto find?*
+* *What usernames did enum4linux reveal?*
+* *What will be your FIRST exploit tomorrow?*

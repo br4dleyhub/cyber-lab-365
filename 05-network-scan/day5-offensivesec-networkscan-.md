@@ -51,7 +51,7 @@ Ubuntu Server was removed prior to this phase and is not part of Day 5 activitie
 ##
 ##
 
-##### **Step 1 — Network Reachability Verification**
+##### **Step 6.1 — Network Reachability Verification**
 
 
 
@@ -93,7 +93,7 @@ Screenshots:
 ##
 ##
 
-##### **Step 2 — Full Network Scan (Windows)**
+##### **Step 6.2 — Full Network Scan (Windows)**
 
 
 
@@ -139,7 +139,7 @@ Screenshots:
 ##
 ##
 
-##### **Step 3 — Full Network Scan (Metasploitable2)**
+##### **Step 6.3 — Full Network Scan (Metasploitable2)**
 
 
 
@@ -191,7 +191,7 @@ Screenshots:
 ##
 ##
 
-##### **Step 4 — Web Service Enumeration**
+##### **Step 6.4 — Web Service Enumeration**
 
 
 
@@ -263,7 +263,7 @@ Screenshots:
 ##
 
 
-##### **Step 5 — SMB Enumeration (Windows \& Metasploitable2)**
+##### **Step 6.5 — SMB Enumeration (Windows \& Metasploitable2)**
 
 
 
@@ -332,7 +332,7 @@ Screenshots:
 ##
 
 
-##### **Step 6 — Service Version Enumeration (FTP \& SSH)**
+##### **Step 6.6 — Service Version Enumeration (FTP \& SSH)**
 
 
 
@@ -430,3 +430,14 @@ Metasploitable2	       Highly Vulnerable      High (Primary Target)
 * *Ability to distinguish hardened vs vulnerable systems*
 * *Preparation for controlled exploitation*
 * *Evidence-based decision making*
+  
+ ##
+ 
+  *FINAL SKILL CHECK — What YOU should be able to answer now*
+* *These questions prove you mastered Day 5:*
+* Which machine is the most vulnerable and why?*
+* *Which service is the best initial attack vector?*
+* *How many open ports does Windows have compared to Metasploitable2?*
+* *What critical weaknesses did Nikto find?*
+* *What usernames did enum4linux reveal?*
+* *What will be your FIRST exploit tomorrow?*

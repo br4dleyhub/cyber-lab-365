@@ -26,8 +26,8 @@
 * This phase focuses only on practical actions. Documentation reflects real commands and real outputs.
 
 
-
-
+##
+##
 
 ##### **🧪 Lab Environment**
 
@@ -48,8 +48,8 @@ Targets  ---> Windows — 192.168.187.60 (Hardened)
 Ubuntu Server was removed prior to this phase and is not part of Day 5 activities.
 
 
-
-
+##
+##
 
 ##### **Step 1 — Network Reachability Verification**
 
@@ -90,8 +90,8 @@ Screenshots:
 [kalipingmetasploitable2](/04-windows-hardening/screenshots/kalipingmetasploitable2.png)
 
 
-
-
+##
+##
 
 ##### **Step 2 — Full Network Scan (Windows)**
 
@@ -136,8 +136,8 @@ Screenshots:
 [fullnmapwindows2](/04-windows-hardening/screenshots/fullnmapwindows2.png)
 
 
-
-
+##
+##
 
 ##### **Step 3 — Full Network Scan (Metasploitable2)**
 
@@ -188,7 +188,8 @@ Screenshots:
 
 [fullnmapmetasploitable2-5](/04-windows-hardening/screenshots/fullnmapmetasploitable2-5.png)
 
-
+##
+##
 
 ##### **Step 4 — Web Service Enumeration**
 
@@ -216,7 +217,8 @@ Screenshot:
 
 [websitemetasploitable2](/04-windows-hardening/screenshots/websitemetasploitable2.png)
 
-
+##
+##
 
 ##### *4.2 Web Vulnerability Scanning*
 
@@ -255,7 +257,8 @@ Screenshots:
 [niktometasploitable2-2](/04-windows-hardening/screenshots/niktometasploitable2-2.png)
 
 
-
+##
+##
 
 
 ##### **Step 5 — SMB Enumeration (Windows \& Metasploitable2)**
@@ -323,7 +326,8 @@ Screenshots:
 [enum4linux-metasploitable2-6](/04-windows-hardening/screenshots/enum4linux-metasploitable2-6.png)
 
 
-
+##
+##
 
 
 ##### **Step 6 — Service Version Enumeration (FTP \& SSH)**
@@ -355,7 +359,8 @@ Screenshot:
 [ftp-banner-version](/04-windows-hardening/screenshots/ftp-banner-version.png)
 
 
-
+##
+##
 
 
 ###### SSH Version Enumeration
@@ -387,7 +392,8 @@ Screenshot:
 [ssh-version-windows](/04-windows-hardening/screenshots/ssh-version-windows.png)
 
 
-
+##
+##
 
 
 ##### Analysis \& Attacker Mindset
@@ -398,7 +404,7 @@ Windows	Hardened	          Low
 
 Metasploitable2	       Highly Vulnerable      High (Primary Target)
 
-
+##
 
 ##### Primary Attack Vectors Identified
 
@@ -410,7 +416,7 @@ Metasploitable2	       Highly Vulnerable      High (Primary Target)
 * Legacy daemons
 
 
-
+##
 
 
 ##### **Day 5 Outcome**

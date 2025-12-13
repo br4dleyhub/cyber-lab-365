@@ -248,6 +248,8 @@ Key Findings:
 
 Screenshots:
 
+[niktometasploitable2](/05-network-scan/screenshots/niktometasploitable2.png)
+
 
 
 [niktometasploitable2-1](/05-network-scan/screenshots/niktometasploitable2-1.png)

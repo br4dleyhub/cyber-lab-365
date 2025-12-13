@@ -41,7 +41,7 @@ Targets  ---> Windows — 192.168.187.60 (Hardened)
 
 
 
-&nbsp;	 ---> Metasploitable2 — 192.168.187.40 (Intentionally vulnerable)
+&nbsp; ***** ---> Metasploitable2 — 192.168.187.40 (Intentionally vulnerable)
 
 
 

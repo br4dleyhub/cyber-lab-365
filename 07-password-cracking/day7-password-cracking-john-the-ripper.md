@@ -20,7 +20,7 @@
 
 
 
-[After exploitation and privilege escalation](cyber-lab-365/06-real-exploitation-metasploit/day6-offensivesec-realexploit-metasploit.md) , attackers rarely stop at shell access.
+[After exploitation and privilege escalation](../06-real-exploitation-metasploit/day6-offensivesec-realexploit-metasploit.md), attackers rarely stop at shell access.
 
 They attempt to:
 

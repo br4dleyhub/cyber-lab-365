@@ -63,7 +63,7 @@ The file contains:
 
 
 
-[nano-metasploitable-hashes-txt](/07-Password-Cracking/screenshots/nano-metasploitable-hashes-txt.png)
+[nano-metasploitable-hashes-txt](/07-password-cracking/screenshots/nano-metasploitable-hashes-txt.png)
 
 
 
@@ -99,7 +99,7 @@ Using the wrong hash format leads to wasted time and failed attacks.
 
 
 
-[john-list-format](/07-Password-Cracking/screenshots/john-list-format.png)
+[john-list-format](/07-password-cracking/screenshots/john-list-format.png)
 
 
 
@@ -129,7 +129,7 @@ Using the wrong hash format leads to wasted time and failed attacks.
 
 
 
-[john-running](/07-Password-Cracking/screenshots/john-running.png)
+[john-running](/07-password-cracking/screenshots/john-running.png)
 
 
 
@@ -159,7 +159,7 @@ Several weak passwords were successfully cracked, such as:
 
 
 
-[showing-john-result](/07-Password-Cracking/screenshots/showing-john-result.png)
+[showing-john-result](/07-password-cracking/screenshots/showing-john-result.png)
 
 
 

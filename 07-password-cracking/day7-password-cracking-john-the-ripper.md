@@ -2,7 +2,7 @@
 
 
 
-#### Day 7- STEP 8 - *Password Cracking (John the Ripper \& Hashcat)*
+#### Day 7- STEP 8 - *Password Cracking (John the Ripper )*
 
 
 

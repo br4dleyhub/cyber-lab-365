@@ -16,8 +16,6 @@
 
 
 
-
-
 ###### **Why This Step Matters**
 
 
@@ -32,7 +30,7 @@ They attempt to:
 * This step connects exploitation → persistence → lateral movement.
 
 
-
+##
 
 
 **🧪 Lab Context**
@@ -43,7 +41,7 @@ They attempt to:
 * **Hash Type: md5crypt ($1$)**
 
 
-
+##
 
 
 ##### **Step 1 — Preparing the Hashes**
@@ -65,11 +63,11 @@ The file contains:
 
 
 
-\[nano-metasploitable-hashes-txt](/07-Password-Cracking/screenshots/nano-metasploitable-hashes-txt.png)
+[nano-metasploitable-hashes-txt](/07-Password-Cracking/screenshots/nano-metasploitable-hashes-txt.png)
 
 
 
-
+##
 
 
 
@@ -86,7 +84,7 @@ Before cracking, it is essential to confirm that the tool supports the hash form
 *This command lists all hash formats supported by John the Ripper.*
 
 
-
+##
 
 
 ###### **Why this matters**
@@ -101,11 +99,11 @@ Using the wrong hash format leads to wasted time and failed attacks.
 
 
 
-\[john-list-format](/07-Password-Cracking/screenshots/john-list-format.png)
+[john-list-format](/07-Password-Cracking/screenshots/john-list-format.png)
 
 
 
-
+##
 
 
 
@@ -131,11 +129,11 @@ Using the wrong hash format leads to wasted time and failed attacks.
 
 
 
-\[john-running](/07-Password-Cracking/screenshots/john-running.png)
+[john-running](/07-Password-Cracking/screenshots/john-running.png)
 
 
 
-
+##
 
 
 
@@ -161,11 +159,11 @@ Several weak passwords were successfully cracked, such as:
 
 
 
-\[showing-john-result](/07-Password-Cracking/screenshots/showing-john-result.png)
+[showing-john-result](/07-Password-Cracking/screenshots/showing-john-result.png)
 
 
 
-
+##
 
 
 
@@ -185,7 +183,7 @@ Several weak passwords were successfully cracked, such as:
 4. This highlights why password policy matters and why dictionary attacks are not always sufficient.
 
 
-
+##
 
 
 ##### ***🧠 Skills Learned***
@@ -202,7 +200,7 @@ Several weak passwords were successfully cracked, such as:
 * ###### <i>Differentiating offensive tooling (John vs Hashcat)</i>
 
 
-
+##
 
 
 ###### **End-State Validation (Day 7)**

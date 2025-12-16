@@ -1,5 +1,5 @@
 #### **DAY 4 — WINDOWS HARDENING**  
-_VM: Windows 10_
+_VM: WINDOWS 10_
 
 Today, I completed the full Windows hardening workflow. This included user management, password and lockout policies, log analysis, RDP configuration, PowerShell scripting, and firewall rules.
 

@@ -50,7 +50,7 @@ Screenshot
 
 
 
-* [splunk_service_running](08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_service_running.png)
+* [splunk_service_running](/08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_service_running.png)
 
 
 ##
@@ -86,7 +86,7 @@ Screenshot
 
 
 
-* [splunk_receiving_enabled](08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_receiving_enabled.png)
+* [splunk_receiving_enabled](/08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_receiving_enabled.png)
 
 
 ##
@@ -112,11 +112,11 @@ Screenshots
 
 
 
-* [linux_auth_log_ingested](08-Windows-Log-Forwarding-to-Splunk/screenshots/linux_auth_log_ingested.png)
+* [linux_auth_log_ingested](/08-Windows-Log-Forwarding-to-Splunk/screenshots/linux_auth_log_ingested.png)
 
 
 
-* [linux_logs_ingested](08-Windows-Log-Forwarding-to-Splunk/screenshots/linux_logs_ingested.png)
+* [linux_logs_ingested](/08-Windows-Log-Forwarding-to-Splunk/screenshots/linux_logs_ingested.png)
 
 
 ##
@@ -163,11 +163,11 @@ Screenshots
 
 
 
-* [windows_uf_installed](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_uf_installed.png)
+* [windows_uf_installed](/08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_uf_installed.png)
 
 
 
-* [splunk_status_ok](08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_status_ok.png)
+* [splunk_status_ok](/08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_status_ok.png)
 
 
 ##
@@ -201,7 +201,7 @@ Screenshot
 
 
 
-* [windows_forwarder_connected](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_forwarder_connected.png)
+* [windows_forwarder_connected](/08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_forwarder_connected.png)
 
 
 ##
@@ -253,7 +253,7 @@ Screenshot
 
 
 
-[windows_inputs_conf](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_inputs_conf.png)
+[windows_inputs_conf](/08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_inputs_conf.png)
 
 
 ##
@@ -281,7 +281,7 @@ Screenshot
 
 
 
-* [windows_eventlogs_in_splunk](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_eventlogs_in_splunk.png)
+* [windows_eventlogs_in_splunk](/08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_eventlogs_in_splunk.png)
 
 
 ##

@@ -12,7 +12,7 @@
 
 ###### ***Deploy a real endpoint agent (Splunk Universal Forwarder) on Windows and forward security-relevant logs to the Ubuntu Splunk SIEM. This simulates how enterprise endpoints send telemetry to a SOC.***
 
-
+##
 
 ##### **🧱 Lab Architecture**
 
@@ -25,7 +25,7 @@
 5. **Network: VMware VMnet2 (internal lab network)**
 
 
-
+##
 
 
 ##### **STEP 9.1 — Verify Splunk Is Running on Ubuntu**
@@ -50,10 +50,10 @@ Screenshot
 
 
 
-* splunk\_service\_running
+* [splunk_service_running](08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_service_running.png)
 
 
-
+##
 
 
 ##### **STEP 9.2 — Enable Receiving on Splunk (Port 9997)**
@@ -86,10 +86,10 @@ Screenshot
 
 
 
-* splunk\_receiving\_enabled
+* [splunk_receiving_enabled](08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_receiving_enabled.png)
 
 
-
+##
 
 
 ##### **STEP 9.3 — Verify Linux Log Ingestion (Sanity Check)**
@@ -112,14 +112,14 @@ Screenshots
 
 
 
-* linux\_auth\_log\_ingested
+* [linux_auth_log_ingested](08-Windows-Log-Forwarding-to-Splunk/screenshots/linux_auth_log_ingested.png)
 
 
 
-* linux\_logs\_ingested
+* [linux_logs_ingested](08-Windows-Log-Forwarding-to-Splunk/screenshots/linux_logs_ingested.png)
 
 
-
+##
 
 
 ##### **STEP 9.4 — Install Splunk Universal Forwarder on Windows**
@@ -163,14 +163,14 @@ Screenshots
 
 
 
-* windows\_uf\_installed
+* [windows_uf_installed](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_uf_installed.png)
 
 
 
-* splunk\_status\_ok
+* [splunk_status_ok](08-Windows-Log-Forwarding-to-Splunk/screenshots/splunk_status_ok.png)
 
 
-
+##
 
 
 ##### **STEP 9.5 — Verify Forwarder Connection**
@@ -201,10 +201,10 @@ Screenshot
 
 
 
-* windows\_forwarder\_connected
+* [windows_forwarder_connected](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_forwarder_connected.png)
 
 
-
+##
 
 
 ##### **STEP 9.6 — Configure Windows Event Log Inputs**
@@ -255,10 +255,10 @@ Screenshot
 
 
 
-windows\_inputs\_conf
+[windows_inputs_conf](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_inputs_conf.png)
 
 
-
+##
 
 
 ##### STEP 9.7 — Verify Windows Logs in Splunk
@@ -283,12 +283,10 @@ Screenshot
 
 
 
-* *windows\_eventlogs\_in\_splunk*
+* [windows_eventlogs_in_splunk](08-Windows-Log-Forwarding-to-Splunk/screenshots/windows_eventlogs_in_splunk.png)
 
 
-
-
-
+##
 
 
 ###### **SOC Relevance**

@@ -38,7 +38,7 @@ Before accepting logs, Splunk must be running and listening.
 
 **Commands**
 
-* sudo /opt/splunk/bin/splunk status
+*     sudo /opt/splunk/bin/splunk status
 
 
 
@@ -66,13 +66,13 @@ Splunk must be configured to receive forwarded logs.
 
 **Command**
 
-sudo /opt/splunk/bin/splunk enable listen 9997
+    sudo /opt/splunk/bin/splunk enable listen 9997
 
 
 
 **Verify:**
 
-* *sudo /opt/splunk/bin/splunk list listen*
+*     *sudo /opt/splunk/bin/splunk list listen*
 
 
 
@@ -102,9 +102,9 @@ Before adding Windows logs, confirm Splunk can ingest local Linux logs.
 
 **Command**
 
-* sudo /opt/splunk/bin/splunk add monitor /var/log/auth.log
-* Splunk Web Search
-* source="/var/log/auth.log"
+*     sudo /opt/splunk/bin/splunk add monitor /var/log/auth.log
+*     Splunk Web Search
+*     source="/var/log/auth.log"
 
 
 
@@ -148,8 +148,8 @@ Run as Service: Enabled
 
 **Verification (PowerShell)**
 
-* cd "C:\\Program Files\\SplunkUniversalForwarder\\bin"
-* .\\splunk.exe status
+*     cd "C:\\Program Files\\SplunkUniversalForwarder\\bin"
+*     .\\splunk.exe status
 
 
 
@@ -183,7 +183,7 @@ Ensure the Windows forwarder is correctly connected to the Splunk receiver.
 
 **Command (Windows)**
 
-* .\\splunk.exe list forward-server
+*     .\\splunk.exe list forward-server
 
 
 
@@ -220,9 +220,7 @@ Configuration File
 * *C:\\Program Files\\SplunkUniversalForwarder\\etc\\system\\local\\inputs.conf*
 
 
-
-Example configuration:
-
+Configuration:
 
 
 **\[WinEventLog:Security]**
@@ -245,7 +243,7 @@ Example configuration:
 
 Restart forwarder:
 
-* *.\\splunk.exe restart*
+*     *.\\splunk.exe restart*
 
 
 
@@ -267,13 +265,13 @@ Screenshot
 
 Splunk Search
 
-* *index=\* sourcetype=WinEventLog\**
+*     *index=\* sourcetype=WinEventLog\**
 
 
 
 Or more specific:
 
-* *index=\* source="WinEventLog:Security"*
+*     *index=\* source="WinEventLog:Security"*
 
 
 

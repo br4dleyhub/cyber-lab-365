@@ -134,7 +134,7 @@ These actions produced logs such as:
 
 
 
-* [kali\_ssh\_attack](/09-attack-from-kali-to-ubuntu/screenshots/kali\_ssh\_attack.png)
+* [kali_ssh_attack](/09-attack-from-kali-to-ubuntu/screenshots/kali_ssh_attack.png)
 
 
 
@@ -174,7 +174,7 @@ This confirmed that the attack attempts were successfully logged by the system.
 
 
 
-* [linux\_auth\_log\_attack](/09-attack-from-kali-to-ubuntu/screenshots/linux\_auth\_log\_attack.png)
+* [linux_auth_log_attack](/09-attack-from-kali-to-ubuntu/screenshots/linux_auth_log_attack.png)
 
 
 
@@ -206,7 +206,7 @@ The results clearly showed multiple failed login attempts originating from Kaliâ
 
 
 
-* [linux\_bruteforce\_detected](/09-attack-from-kali-to-ubuntu/screenshots/linux\_bruteforce\_detected.png)
+* [linux_bruteforce_detected](/09-attack-from-kali-to-ubuntu/screenshots/linux_bruteforce_detected.png)
 
 
 
@@ -238,7 +238,7 @@ The results clearly showed multiple failed login attempts originating from Kaliâ
 
 
 
-* [linux\_bruteforce\_alert\_created](/09-attack-from-kali-to-ubuntu/screenshots/linux\_bruteforce\_alert\_created.png)
+* [linux_bruteforce_alert_created](/09-attack-from-kali-to-ubuntu/screenshots/linux_bruteforce_alert_created.png)
 
 
 
@@ -260,7 +260,7 @@ The results clearly showed multiple failed login attempts originating from Kaliâ
 
 
 
-* [alert\_triggered](/09-attack-from-kali-to-ubuntu/screenshots/alert\_triggered.png)
+* [alert_triggered](/09-attack-from-kali-to-ubuntu/screenshots/alert_triggered.png)
 
 
 
@@ -298,7 +298,7 @@ From the events, I identified:
 
 
 
-* [incident\_investigation](/09-attack-from-kali-to-ubuntu/screenshots/incident\_investigation.png)
+* [incident_investigation](/09-attack-from-kali-to-ubuntu/screenshots/incident_investigation.png)
 
 
 

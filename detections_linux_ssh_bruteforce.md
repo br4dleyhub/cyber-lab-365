@@ -59,19 +59,19 @@ Based on the observed behavior:
 
 
 
-**Field	         	                  Value**
+**Field	 ---------------------------------- Value**
 
-&nbsp;		Tactic	           	           Credential Access
+&nbsp;		Tactic	---------------------- Credential Access
 
-&nbsp;		Technique	        	        Brute Force
+&nbsp;		Technique	 ------------------- Brute Force
 
-&nbsp;		Sub-Technique	     	       T1110.001 — Password Guessing
+&nbsp;		Sub-Technique	---------------- T1110.001 — Password Guessing
 
-&nbsp;		Platform	        	           Linux
+&nbsp;		Platform --------------------- Linux
 
-&nbsp;		Data Source	        	    Authentication Logs
+&nbsp;		Data Source	------------------ Authentication Logs
 
-&nbsp;		Detection Type	                	Behavioral
+&nbsp;		Detection Type --------------- Behavioral
 
 
 

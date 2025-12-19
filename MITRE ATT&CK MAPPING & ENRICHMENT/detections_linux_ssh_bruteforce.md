@@ -104,7 +104,8 @@ Based on the observed behavior:
 ###### Screenshot 
 
 
-[alert_with_mitre_mapping](/MITRE ATT&CK MAPPING & ENRICHMENT/screenshots/alert_with_mitre_mapping.png)
+[alert_with_mitre_mapping](/cyber-lab-365/MITRE ATT&CK MAPPING & ENRICHMENT
+/screenshots/alert_with_mitre_mapping.png)
 
 
 
@@ -186,7 +187,8 @@ This allowed me to identify:
 
 
 
-[attack_timeline](/MITRE ATT&CK MAPPING & ENRICHMENT/screenshots/attack_timeline.png)
+[attack_timeline](/cyber-lab-365/MITRE ATT&CK MAPPING & ENRICHMENT
+/screenshots/attack_timeline.png)
 
 
 

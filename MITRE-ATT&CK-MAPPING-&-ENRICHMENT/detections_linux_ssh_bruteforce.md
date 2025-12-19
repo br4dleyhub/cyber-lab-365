@@ -186,7 +186,7 @@ This allowed me to identify:
 
 
 
-[attack_timeline](/cyber-lab-365/MITRE-ATT&CK-MAPPING-&-ENRICHMENT/screenshots/attack_timeline.png)
+[attack_timeline](/MITRE-ATT&CK-MAPPING-&-ENRICHMENT/screenshots/attack_timeline.png)
 
 
 

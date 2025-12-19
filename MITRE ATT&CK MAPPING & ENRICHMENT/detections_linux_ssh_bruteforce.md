@@ -95,7 +95,7 @@ Based on the observed behavior:
 
 **Alert Description** 
 
-*This alert detects multiple failed SSH authentication attempts consistent with MITRE ATT\&CK technique T1110.001 (Password Guessing), which indicates potential brute-force credential access activity.*
+    *This alert detects multiple failed SSH authentication attempts consistent with MITRE ATT\&CK technique T1110.001 (Password Guessing), which indicates potential brute-force credential access activity.*
 
 
 
@@ -105,7 +105,7 @@ Based on the observed behavior:
 
 
 
-* [alert_with_mitre_mapping](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/alert_with_mitre_mapping.png)
+* [alert_with_mitre_mapping](/MITRE ATT&CK MAPPING & ENRICHMENT/screenshots/alert_with_mitre_mapping.png)
 
 
 
@@ -169,7 +169,7 @@ Detection Documentation Includes:
 
 Enrichment SPL
 
-* index=\* source="/var/log/auth.log" "Failed password"| rex "from (?<src\_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"| stats count earliest(\_time) latest(\_time) by src\_ip
+*     index=\* source="/var/log/auth.log" "Failed password"| rex "from (?<src\_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"| stats count earliest(\_time) latest(\_time) by src\_ip
 
 
 
@@ -187,7 +187,7 @@ This allowed me to identify:
 
 
 
-[attack_timeline](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/attack_timeline.png)
+[attack_timeline](/MITRE ATT&CK MAPPING & ENRICHMENT/screenshots/attack_timeline.png)
 
 
 

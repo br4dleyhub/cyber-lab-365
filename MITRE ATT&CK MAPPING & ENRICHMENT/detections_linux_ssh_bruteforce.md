@@ -32,7 +32,8 @@ In the previous phase, I successfully:
 
 
 
-
+##
+##
 
 
 
@@ -79,7 +80,8 @@ Based on the observed behavior:
 
 
 
-
+##
+##
 
 
 
@@ -103,7 +105,7 @@ Based on the observed behavior:
 
 
 
-* \[alert\_with\_mitre\_mapping](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/alert\_with\_mitre\_mapping.png)
+* [alert_with_mitre_mapping](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/alert_with_mitre_mapping.png)
 
 
 
@@ -119,7 +121,8 @@ Based on the observed behavior:
 
 
 
-
+##
+##
 
 
 
@@ -148,21 +151,11 @@ Detection Documentation Includes:
 
 
 
-###### Screenshot
-
-
-
-* \[mitre\_detection\_doc](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/mitre\_detection\_doc.png)
-
-
-
-
-
 *This step reinforces documentation discipline, which is critical in real SOC operations.*
 
 
-
-
+##
+##
 
 
 
@@ -194,7 +187,7 @@ This allowed me to identify:
 
 
 
-\[attack\_timeline](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/attack\_timeline.png)
+[attack_timeline](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/attack_timeline.png)
 
 
 

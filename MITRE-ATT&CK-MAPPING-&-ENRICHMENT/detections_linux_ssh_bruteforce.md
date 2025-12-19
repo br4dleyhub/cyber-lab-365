@@ -104,7 +104,7 @@ Based on the observed behavior:
 ###### Screenshot 
 
 
-[alert_with_mitre_mapping](/cyber-lab-365/MITRE-ATT&CK-MAPPING-&-ENRICHMENT/screenshots/alert_with_mitre_mapping.png)
+[alert_with_mitre_mapping](/MITRE-ATT&CK-MAPPING-&-ENRICHMENT/screenshots/alert_with_mitre_mapping.png)
 
 
 

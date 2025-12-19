@@ -63,7 +63,7 @@
 
 On the Ubuntu server, I verified the SSH service:
 
-* sudo systemctl status ssh
+*     sudo systemctl status ssh
 
 
 
@@ -71,8 +71,8 @@ On the Ubuntu server, I verified the SSH service:
 
 ###### The service was not running, I enabled and started it:
 
-* sudo systemctl start ssh
-* sudo systemctl enable ssh
+*     sudo systemctl start ssh
+*     sudo systemctl enable ssh
 
 
 
@@ -84,7 +84,7 @@ On the Ubuntu server, I verified the SSH service:
 
 *To ensure authentication logs were being monitored, I ran:*
 
-* sudo /opt/splunk/bin/splunk list monitor
+*     sudo /opt/splunk/bin/splunk list monitor
 
 
 
@@ -92,7 +92,7 @@ On the Ubuntu server, I verified the SSH service:
 
 **I confirmed that the following log file was listed:**
 
-* /var/log/auth.log
+*     /var/log/auth.log
 
 
 
@@ -148,7 +148,7 @@ These actions produced logs such as:
 
 On the Ubuntu server, I verified that the attack activity was logged:
 
-* **sudo tail -n 20 /var/log/auth.log**
+*     **sudo tail -n 20 /var/log/auth.log**
 
 
 
@@ -190,7 +190,7 @@ This confirmed that the attack attempts were successfully logged by the system.
 
 
 
-* index=\* source="/var/log/auth.log" "Failed password"| rex "from (?<src\_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"| stats count by src\_ip| where count >= 5| sort -count
+*     index=\* source="/var/log/auth.log" "Failed password"| rex "from (?<src\_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"| stats count by src\_ip| where count >= 5| sort -count
 
 
 
@@ -224,11 +224,11 @@ The results clearly showed multiple failed login attempts originating from Kaliâ
 
 **Setting	Value**
 
-1. Alert Name         ---> Linux SSH Brute Force
-2. Type               ---> Scheduled 
-3. Time Range	      ---> Last 5 minutes
-4. Trigger Condition  ---> Number of results > 0
-5. Severity	      ---> High
+    1. Alert Name         ---> Linux SSH Brute Force
+    2. Type               ---> Scheduled 
+    3. Time Range	      ---> Last 5 minutes
+    4. Trigger Condition  ---> Number of results > 0
+    5. Severity	      ---> High
 
 
 
@@ -276,7 +276,7 @@ After the alert fired, I opened the alert results and conducted a basic investig
 
 
 
-* index=\* source="/var/log/auth.log"
+*     index=\* source="/var/log/auth.log"
 
 
 

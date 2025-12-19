@@ -19,7 +19,7 @@
 5. A full attacker → victim → SIEM workflow
 
 
-
+##
 
 
 ##### **Objective**
@@ -33,7 +33,7 @@
 * Trigger security alerts
 * Support investigation from a SOC analyst perspective
 
-
+##
 
 ###### **Lab Topology**
 
@@ -50,7 +50,7 @@
 *All machines were connected to VMnet2, and I confirmed network connectivity between Kali and Ubuntu before starting the attack simulation.*
 
 
-
+##
 
 
 ##### **STEP 10.1 — Preparing the Ubuntu Victim**
@@ -63,19 +63,19 @@
 
 On the Ubuntu server, I verified the SSH service:
 
-* sudo systemctl status ssh
+*     sudo systemctl status ssh
 
 
-
+##
 
 
 ###### The service was not running, I enabled and started it:
 
-* sudo systemctl start ssh
-* sudo systemctl enable ssh
+*     sudo systemctl start ssh
+*     sudo systemctl enable ssh
 
 
-
+##
 
 
 ###### **Confirming log ingestion by Splunk**
@@ -84,15 +84,15 @@ On the Ubuntu server, I verified the SSH service:
 
 *To ensure authentication logs were being monitored, I ran:*
 
-* sudo /opt/splunk/bin/splunk list monitor
+*     sudo /opt/splunk/bin/splunk list monitor
 
 
-
+##
 
 
 **I confirmed that the following log file was listed:**
 
-* /var/log/auth.log
+*     /var/log/auth.log
 
 
 
@@ -101,8 +101,8 @@ On the Ubuntu server, I verified the SSH service:
 *This verified that Splunk was ingesting SSH authentication events.*
 
 
-
-
+##
+##
 
 ##### **STEP 10.2 — Launching the Attack from Kali (Mandatory)**
 
@@ -134,12 +134,12 @@ These actions produced logs such as:
 
 
 
-* \[kali\_ssh\_attack](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/kali\_ssh\_attack.png)
+* [kali_ssh_attack](/09-attack-from-kali-to-ubuntu/screenshots/kali_ssh_attack.png)
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.3 — Verifying Attack Logs on Ubuntu**
@@ -148,7 +148,7 @@ These actions produced logs such as:
 
 On the Ubuntu server, I verified that the attack activity was logged:
 
-* **sudo tail -n 20 /var/log/auth.log**
+*     **sudo tail -n 20 /var/log/auth.log**
 
 
 
@@ -174,12 +174,12 @@ This confirmed that the attack attempts were successfully logged by the system.
 
 
 
-* \[linux\_auth\_log\_attack](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/linux\_auth\_log\_attack.png)
+* [linux_auth_log_attack](/09-attack-from-kali-to-ubuntu/screenshots/linux_auth_log_attack.png)
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.4 — Detecting the Attack in Splunk**
@@ -190,7 +190,7 @@ This confirmed that the attack attempts were successfully logged by the system.
 
 
 
-* index=\* source="/var/log/auth.log" "Failed password"| rex "from (?<src\_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"| stats count by src\_ip| where count >= 5| sort -count
+*     index=\* source="/var/log/auth.log" "Failed password"| rex "from (?<src\_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"| stats count by src\_ip| where count >= 5| sort -count
 
 
 
@@ -206,12 +206,12 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 
 
-* \[linux\_bruteforce\_detected](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/linux\_bruteforce\_detected.png)
+* [linux_bruteforce_detected](/09-attack-from-kali-to-ubuntu/screenshots/linux_bruteforce_detected.png)
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.5 — Creating a SOC Alert**
@@ -224,11 +224,11 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 **Setting	Value**
 
-1. Alert Name         ---> Linux SSH Brute Force
-2. Type               ---> Scheduled 
-3. Time Range	      ---> Last 5 minutes
-4. Trigger Condition  ---> Number of results > 0
-5. Severity	      ---> High
+    1. Alert Name         ---> Linux SSH Brute Force
+    2. Type               ---> Scheduled 
+    3. Time Range	      ---> Last 5 minutes
+    4. Trigger Condition  ---> Number of results > 0
+    5. Severity	      ---> High
 
 
 
@@ -238,12 +238,12 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 
 
-* \[linux\_bruteforce\_alert\_created](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/linux\_bruteforce\_alert\_created.png)
+* [linux_bruteforce_alert_created](/09-attack-from-kali-to-ubuntu/screenshots/linux_bruteforce_alert_created.png)
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.6 — Triggering \& Validating the Alert**
@@ -260,12 +260,12 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 
 
-* \[alert\_triggered](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/alert\_triggered.png)
+* [alert_triggered](/09-attack-from-kali-to-ubuntu/screenshots/alert_triggered.png)
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.7 — SOC Investigation**
@@ -276,7 +276,7 @@ After the alert fired, I opened the alert results and conducted a basic investig
 
 
 
-* index=\* source="/var/log/auth.log"
+*     index=\* source="/var/log/auth.log"
 
 
 
@@ -298,12 +298,12 @@ From the events, I identified:
 
 
 
-* \[incident\_investigation](/\*\*\*\*\*/\*\*\*\*\*/\*\*\*\*\*/incident\_investigation.png)
+* [incident_investigation](/09-attack-from-kali-to-ubuntu/screenshots/incident_investigation.png)
 
 
 
-
-
+##
+##
 
 
 ###### Final Summary

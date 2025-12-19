@@ -59,7 +59,7 @@ Based on the observed behavior:
 
 
 
-		**Field	         	                  Value**
+**Field	         	                  Value**
 
 &nbsp;		Tactic	           	           Credential Access
 

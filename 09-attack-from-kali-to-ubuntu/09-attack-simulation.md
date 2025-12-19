@@ -19,7 +19,7 @@
 5. A full attacker → victim → SIEM workflow
 
 
-
+##
 
 
 ##### **Objective**
@@ -33,7 +33,7 @@
 * Trigger security alerts
 * Support investigation from a SOC analyst perspective
 
-
+##
 
 ###### **Lab Topology**
 
@@ -50,7 +50,7 @@
 *All machines were connected to VMnet2, and I confirmed network connectivity between Kali and Ubuntu before starting the attack simulation.*
 
 
-
+##
 
 
 ##### **STEP 10.1 — Preparing the Ubuntu Victim**
@@ -66,7 +66,7 @@ On the Ubuntu server, I verified the SSH service:
 *     sudo systemctl status ssh
 
 
-
+##
 
 
 ###### The service was not running, I enabled and started it:
@@ -75,7 +75,7 @@ On the Ubuntu server, I verified the SSH service:
 *     sudo systemctl enable ssh
 
 
-
+##
 
 
 ###### **Confirming log ingestion by Splunk**
@@ -87,7 +87,7 @@ On the Ubuntu server, I verified the SSH service:
 *     sudo /opt/splunk/bin/splunk list monitor
 
 
-
+##
 
 
 **I confirmed that the following log file was listed:**
@@ -101,8 +101,8 @@ On the Ubuntu server, I verified the SSH service:
 *This verified that Splunk was ingesting SSH authentication events.*
 
 
-
-
+##
+##
 
 ##### **STEP 10.2 — Launching the Attack from Kali (Mandatory)**
 
@@ -138,8 +138,8 @@ These actions produced logs such as:
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.3 — Verifying Attack Logs on Ubuntu**
@@ -178,8 +178,8 @@ This confirmed that the attack attempts were successfully logged by the system.
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.4 — Detecting the Attack in Splunk**
@@ -210,8 +210,8 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.5 — Creating a SOC Alert**
@@ -242,8 +242,8 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.6 — Triggering \& Validating the Alert**
@@ -264,8 +264,8 @@ The results clearly showed multiple failed login attempts originating from Kali�
 
 
 
-
-
+##
+##
 
 
 ##### **STEP 10.7 — SOC Investigation**
@@ -302,8 +302,8 @@ From the events, I identified:
 
 
 
-
-
+##
+##
 
 
 ###### Final Summary
